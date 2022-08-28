@@ -107,12 +107,8 @@ struct Sell2_1: View {
                             }
                             
                             Button {
-                              
                                 GoToDetails = true
-
-                                
                             } label: {
-                                
 //                               Text(publishText)
                                 Image(systemName: "plus")
                                     .font(.system(size: 15))
@@ -121,7 +117,6 @@ struct Sell2_1: View {
                                     .cornerRadius(5)
                                     .foregroundColor(.black)
                                     .shadow(color: .gray.opacity(0.3), radius: 10)
-                                
                             }
                             
                             
