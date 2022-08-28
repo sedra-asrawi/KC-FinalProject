@@ -12,6 +12,13 @@ struct NavigationBar: View {
     
     @State var selectedTab = 2
     @State var selction : String = "home"
+    @State var username2 : String
+    @Binding var storeName : [UIImage]
+    @Binding var shopsName : String
+
+
+
+    
 
     
     var body: some View {
@@ -26,7 +33,7 @@ struct NavigationBar: View {
                     .tag(1)
                 
                 
-                NavigationBar()
+                Home(username: $username2, thestoreName: $storeName, shopsName: $shopsName)
                     .ignoresSafeArea(edges: .top)
                     .tabItem {
                         Image(systemName: "house")
@@ -55,6 +62,6 @@ struct NavigationBar: View {
 
 struct NavigationBar_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationBar()
+        NavigationBar(username2: "", storeName: .constant([UIImage(named: "Ananas")!]), shopsName: .constant("Ananas"))
     }
 }

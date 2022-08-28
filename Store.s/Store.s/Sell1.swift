@@ -14,12 +14,13 @@ struct Sell1: View {
     @State var iconback : Color = .clear
     @State var StoreName = ""
     @State var StoreType = ""
-    @State var types = ["other","food","gifts","clothes","tecnology"]
+    @State var types = ["other","food","gifts","clothes","technology"]
     @State var selectedNumber: Int = 0
     @State var logo = UIImage(named: "white")!
     @State var isShowingImagePicker = false
     @State private var image = UIImage(named: "white")!
     @State private var showSheet = false
+    @State var storesName : [UIImage]
     
     
   
@@ -125,8 +126,9 @@ struct Sell1: View {
 
                                 NavigationLink {
                                      
-                                    Sell2()
+                                    Sell2_1(image: $image, StoreName: $StoreName, storesName: $storesName)
                                         .navigationBarBackButtonHidden(true)
+//
                                 } label: {
                                     Text("Let's Start")
                                         .font(.system(size: 20))
@@ -138,6 +140,7 @@ struct Sell1: View {
                                         .cornerRadius(7)
                                         .shadow(color: .gray.opacity(0.2), radius: 10, x: 1, y: 1)
                                         .padding()
+//                                        
                                         
                                         }
                                 Spacer()
@@ -168,7 +171,7 @@ struct Sell1: View {
 
 struct Sell1_Previews: PreviewProvider {
     static var previews: some View {
-        Sell1()
+        Sell1(storesName: [UIImage(named: "Ananas")!])
     }
 }
 }

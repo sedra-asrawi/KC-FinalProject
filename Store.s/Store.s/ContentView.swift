@@ -52,6 +52,7 @@ struct ContentView: View {
                     Spacer()
                     
                     TextField("User Name", text: $username)
+                        .foregroundColor(Color("Color4"))
                         .padding()
                         .background(.white)
                         .cornerRadius(7)
@@ -60,6 +61,7 @@ struct ContentView: View {
                     
                     
                     SecureField("Password", text: $password)
+                        .foregroundColor(Color("Color4"))
                         .padding()
                         .background(.white)
                         .cornerRadius(7)
@@ -68,7 +70,7 @@ struct ContentView: View {
                     
                     
                     NavigationLink {
-                        NavigationBar()
+                        NavigationBar(username2: username, storeName: .constant([UIImage(named: "Ananas")!]), shopsName: .constant("Ananas"))
                             .navigationBarBackButtonHidden(true)
                     } label: {
                         Text("Let's Start")
@@ -79,7 +81,7 @@ struct ContentView: View {
                             .frame(width: 330, height: 70)
                             .background(Color("Color3"))
                             .cornerRadius(7)
-                            .shadow(color: .gray.opacity(0.2), radius: 10, x: 1, y: 1)
+                            .shadow(color: .gray.opacity(0.3), radius: 10, x: 1, y: 1)
                             .padding()
                     }
 
@@ -89,17 +91,12 @@ struct ContentView: View {
                         .foregroundColor(.gray)
                         .underline()
                     
-                    
-
-                
-                    
-                    
                     Spacer()
                 }
                 
                 
             }
-            .navigationBarHidden(true)
+//            .navigationBarHidden(true)
             
         }.accentColor(Color("Color4"))
     }
@@ -108,6 +105,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .preferredColorScheme(.light)
     }
 }
 

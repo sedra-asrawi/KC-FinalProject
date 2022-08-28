@@ -17,7 +17,8 @@ struct PersonalPage: View {
                             .scaledToFill()
                             .ignoresSafeArea()
                             .frame(width: 390, height: 300,alignment: .center)
-                }.padding(.top,240)
+                }
+                .padding(.top,240)
                 Spacer()
             }
     }

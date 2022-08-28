@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F843678028BB139700EE212B /* Buy2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F843677F28BB139700EE212B /* Buy2.swift */; };
 		F84E577028B6A8440077A60F /* Store_sApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E576F28B6A8440077A60F /* Store_sApp.swift */; };
 		F84E577228B6A8440077A60F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E577128B6A8440077A60F /* ContentView.swift */; };
 		F84E577428B6A8450077A60F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F84E577328B6A8450077A60F /* Assets.xcassets */; };
@@ -17,10 +18,15 @@
 		F84E578428B6A8640077A60F /* Sell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E578328B6A8640077A60F /* Sell1.swift */; };
 		F84E578628B6A8670077A60F /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E578528B6A8670077A60F /* Home.swift */; };
 		F84E578828B6A9430077A60F /* junk in Resources */ = {isa = PBXBuildFile; fileRef = F84E578728B6A9430077A60F /* junk */; };
-		F84E578A28B6A95C0077A60F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E578928B6A95C0077A60F /* ImagePicker.swift */; };
+		F8A6925428BABC7D00158F3B /* Buy1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A6925328BABC7D00158F3B /* Buy1.swift */; };
+		F8A6925828BAC12000158F3B /* FoodBuy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A6925728BAC12000158F3B /* FoodBuy.swift */; };
+		F8BCFBD528B70302000E614D /* Product Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BCFBD428B70302000E614D /* Product Details.swift */; };
+		F8BCFBD728B7035D000E614D /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BCFBD628B7035D000E614D /* ImagePicker.swift */; };
+		F8CB834328BB97CD00B1329A /* Sell2-1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CB834228BB97CD00B1329A /* Sell2-1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F843677F28BB139700EE212B /* Buy2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buy2.swift; sourceTree = "<group>"; };
 		F84E576C28B6A8440077A60F /* Store.s.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Store.s.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F84E576F28B6A8440077A60F /* Store_sApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store_sApp.swift; sourceTree = "<group>"; };
 		F84E577128B6A8440077A60F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,7 +38,11 @@
 		F84E578328B6A8640077A60F /* Sell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sell1.swift; sourceTree = "<group>"; };
 		F84E578528B6A8670077A60F /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		F84E578728B6A9430077A60F /* junk */ = {isa = PBXFileReference; lastKnownFileType = folder; path = junk; sourceTree = "<group>"; };
-		F84E578928B6A95C0077A60F /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		F8A6925328BABC7D00158F3B /* Buy1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Buy1.swift; path = ../Buy1.swift; sourceTree = "<group>"; };
+		F8A6925728BAC12000158F3B /* FoodBuy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodBuy.swift; sourceTree = "<group>"; };
+		F8BCFBD428B70302000E614D /* Product Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product Details.swift"; sourceTree = "<group>"; };
+		F8BCFBD628B7035D000E614D /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImagePicker.swift; path = junk/ImagePicker.swift; sourceTree = "<group>"; };
+		F8CB834228BB97CD00B1329A /* Sell2-1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sell2-1.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,12 +77,17 @@
 			children = (
 				F84E576F28B6A8440077A60F /* Store_sApp.swift */,
 				F84E577128B6A8440077A60F /* ContentView.swift */,
+				F8BCFBD428B70302000E614D /* Product Details.swift */,
 				F84E577D28B6A8590077A60F /* NavigationBar.swift */,
 				F84E577F28B6A85D0077A60F /* PersonalPage.swift */,
 				F84E578128B6A8610077A60F /* Sell2.swift */,
+				F8CB834228BB97CD00B1329A /* Sell2-1.swift */,
 				F84E578328B6A8640077A60F /* Sell1.swift */,
 				F84E578528B6A8670077A60F /* Home.swift */,
-				F84E578928B6A95C0077A60F /* ImagePicker.swift */,
+				F8BCFBD628B7035D000E614D /* ImagePicker.swift */,
+				F8A6925328BABC7D00158F3B /* Buy1.swift */,
+				F8A6925728BAC12000158F3B /* FoodBuy.swift */,
+				F843677F28BB139700EE212B /* Buy2.swift */,
 				F84E578728B6A9430077A60F /* junk */,
 				F84E577328B6A8450077A60F /* Assets.xcassets */,
 				F84E577528B6A8450077A60F /* Preview Content */,
@@ -162,11 +177,16 @@
 				F84E577228B6A8440077A60F /* ContentView.swift in Sources */,
 				F84E578228B6A8610077A60F /* Sell2.swift in Sources */,
 				F84E577028B6A8440077A60F /* Store_sApp.swift in Sources */,
+				F8BCFBD728B7035D000E614D /* ImagePicker.swift in Sources */,
+				F8A6925428BABC7D00158F3B /* Buy1.swift in Sources */,
+				F8A6925828BAC12000158F3B /* FoodBuy.swift in Sources */,
 				F84E578028B6A85D0077A60F /* PersonalPage.swift in Sources */,
 				F84E577E28B6A8590077A60F /* NavigationBar.swift in Sources */,
-				F84E578A28B6A95C0077A60F /* ImagePicker.swift in Sources */,
 				F84E578428B6A8640077A60F /* Sell1.swift in Sources */,
+				F8BCFBD528B70302000E614D /* Product Details.swift in Sources */,
 				F84E578628B6A8670077A60F /* Home.swift in Sources */,
+				F843678028BB139700EE212B /* Buy2.swift in Sources */,
+				F8CB834328BB97CD00B1329A /* Sell2-1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

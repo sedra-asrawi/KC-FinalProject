@@ -9,8 +9,10 @@ import SwiftUI
 
 struct Home: View {
     
-    @State var username : String = "name"
-    
+    @Binding var username : String
+    @Binding var thestoreName : [UIImage]
+    @Binding var shopsName : String
+
     var body: some View {
             
             ZStack{
@@ -28,14 +30,16 @@ struct Home: View {
                             Spacer()
                         }.frame(width: 350)
                         
-                        HStack {
+                            HStack {
+                                
+                                Text("\(username)")
+                                    .font(.title)
+                                    .fontWeight(.ultraLight)
+                                    .foregroundColor(Color("Color5"))
+                                Spacer()
+                            }.frame(width: 350)
                             
-                            Text("\(username)")
-                                .font(.title)
-                                .fontWeight(.ultraLight)
-                            Spacer()
-                        }.frame(width: 350)
-                        
+                       
                         Spacer()
                         
                     }.frame(width: 390, height: 600)
@@ -43,25 +47,31 @@ struct Home: View {
                     VStack {
                         Spacer()
                         HStack{
-                            VStack {
-                                Image("buy")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .padding()
-                                    .frame(width: 170, height: 170)
-                                    .background(.white)
-                                    .cornerRadius(20)
-                                .shadow(color: .gray.opacity(0.5), radius: 10, x: 0, y: 0)
-                                
-                                Text("BUY")
-                                    .fontWeight(.bold)
-                                    .padding(5)
+                        
+                            NavigationLink {
+                                Buy1(storeName: $thestoreName, shopsName: $shopsName)
+                            } label: {
+                                VStack {
+                                    Image("buy")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .padding()
+                                        .frame(width: 170, height: 170)
+                                        .background(.white)
+                                        .cornerRadius(20)
+                                    .shadow(color: .gray.opacity(0.5), radius: 10, x: 0, y: 0)
+                                    
+                                    Text("BUY")
+                                        .fontWeight(.bold)
+                                        .padding(5)
+                                }
                             }
+
                             
                             
                             
                                 NavigationLink{
-                                    Sell1()
+                                    Sell1(storesName: thestoreName)
                                 } label: {
                                     VStack {
                                         Image("sell")
@@ -76,7 +86,6 @@ struct Home: View {
                                         Text("SELL")
                                             .fontWeight(.bold)
                                             .padding(5)
-                                            .foregroundColor(.black)
                                     }
                                 }
 
@@ -106,6 +115,6 @@ struct Home: View {
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        Home()
+        Home(username: .constant("name"), thestoreName: .constant([UIImage(named: "Ananas")!]), shopsName: .constant("Ananas"))
     }
 }

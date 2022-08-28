@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct Sell2: View {
-    @State var username = ""
-    @State var password = ""
     @State var selction : String = "home"
     @State var selectedTab = 3
     let colums :[GridItem] = [
@@ -20,7 +18,18 @@ struct Sell2: View {
     @State private var showSheet = false
     @State private var post = UIImage(named: "white")!
     @State var back : Image = Image("white")
+    @Binding var StoreName : String
+    @Binding var image : UIImage
+    @State var GoToDetails = false
+    @Binding var storesName : [UIImage]
+    @State var publishText = "Publish My Store"
+    @State var publishColor = Color("Color3")
+    @State var closeDetails = false
+
+    @State var posts = [UIImage(named: "white")!]
+
     
+
     var body: some View {
             ZStack{
                             Image("5")
@@ -31,16 +40,16 @@ struct Sell2: View {
                     VStack{
                         HStack {
                             
-                            Image("white")
+                            Image(uiImage: image)
                                 .resizable()
                                 .scaledToFit()
                                 .clipShape(Circle())
-                                .frame(width: 50, height: 50)
+                                .frame(width: 80, height: 80)
                                 .shadow(color: .gray.opacity(0.4), radius: 10)
                                 .padding(.leading,35)
                                 .padding(.top,40)
                             
-                            Text("store name")
+                            Text("\(StoreName)")
                                 .font(.system(size: 20))
                             .fontWeight(.bold)
                             .padding(.leading,10)
@@ -48,6 +57,29 @@ struct Sell2: View {
                             
                             
                             Spacer()
+                            
+                            
+                            Button {
+                               storesName.append(image)
+                                publishText = "Your Store is out !"
+                                publishColor = Color("Color1")
+                                
+                                
+                            } label: {
+                                
+                               Text(publishText)
+                                    .font(.system(size: 13))
+                                    .padding(9)
+                                    .background(publishColor)
+                                    .cornerRadius(5)
+                                    .foregroundColor(.black)
+                                    .padding(.top,90)
+                                    .padding(.horizontal)
+                                    .shadow(color: .gray.opacity(0.3), radius: 10)
+                                
+                            }
+
+                            
                         }
                         Divider()
                             .padding()
@@ -60,10 +92,16 @@ struct Sell2: View {
                                      .overlay(Image(uiImage: self.post)
                                         .resizable()
                                         .scaledToFit()
+                                        .frame(width: 120, height: 120)
+                                        
                                      )
                                      .frame(height: 120)
+                                    
                                      .overlay(Image(systemName: "plus")
-                                     .foregroundColor(Color("Color2"))
+                                     .foregroundColor(
+                                        post !== (UIImage(named: "white")) ? Color.clear : Color("Color2")
+                                        
+                                     )
                                      .font(.system(size: 30))
                                      .padding()
                                      .shadow(color: Color("Color2"), radius: 10)
@@ -71,8 +109,19 @@ struct Sell2: View {
 //                                     .shadow(color: .gray.opacity(0.1), radius: 5)
                                      .onTapGesture {
                                          
-                                         showSheet = true
+                                         if post !== (UIImage(named: "white")) {
+                                             GoToDetails = true
+                                         }
+                                         else {
+                                             showSheet = true
+                                         }
+          
                                      }
+                                    
+                                    
+                                    
+                                    
+                                    
                                 }
                             }.padding()
                                 .shadow(color: .gray.opacity(0.1), radius: 20)
@@ -81,7 +130,7 @@ struct Sell2: View {
                    
                         
                         NavigationLink {
-                            Home()
+                            NavigationBar(username2: "Sedra", storeName: $storesName, shopsName: $StoreName)
                                 .navigationBarBackButtonHidden(true)
                         } label: {
                             Image("Home")
@@ -117,8 +166,12 @@ struct Sell2: View {
                     
                         .sheet(isPresented: $showSheet) {
                                 ImagePicker(sourceType: .photoLibrary, selectedImage: self.$post)
+                            
                 }
               
+                        .sheet(isPresented: $GoToDetails) {
+                            Product_Details(post: $post, posts: $posts)
+                        }
                 
             
             }
@@ -127,7 +180,8 @@ struct Sell2: View {
 
 struct Sell2_Previews: PreviewProvider {
     static var previews: some View {
-        Sell2()
+        Sell2(StoreName: .constant("store name"), image: .constant(UIImage(named: "Ananas")!), storesName: .constant([UIImage(named: "Ananas")!])
+        )
     }
 }
 }
