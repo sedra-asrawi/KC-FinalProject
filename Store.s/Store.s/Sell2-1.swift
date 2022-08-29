@@ -28,13 +28,13 @@ struct Sell2_1: View {
     @State var closeDetails = false
     @State var publishImage = "megaphone"
     
+    @State var ProdictsDetails : DetailsModel
+    @Binding var shopDet : shopModel
+    
     func productsNum () -> Int {
         posts.count
         
     }
-    
-    
-
     
     var body: some View {
 //        NavigationView {
@@ -61,7 +61,7 @@ struct Sell2_1: View {
                             
                             NavigationLink {
                                 
-                                Buy2()
+                                Buy2(prodName: $ProdictsDetails.prodName, productDet: $ProdictsDetails, products: $posts)
                                 
                             } label: {
 //                                Text("View My Store")
@@ -77,7 +77,7 @@ struct Sell2_1: View {
                             Button {
                                 
                                 if publishColor == Color("Color2"){
-                                    storesName.append(image)
+                                    storesName.insert(image, at: 0)
      //                                publishText = "Your Store is out !"
                                      publishImage = "megaphone.fill"
                                      publishColor = Color("Color4")
@@ -108,6 +108,9 @@ struct Sell2_1: View {
                             
                             Button {
                                 GoToDetails = true
+                                post = UIImage(named: "white")!
+
+                                
                             } label: {
 //                               Text(publishText)
                                 Image(systemName: "plus")
@@ -240,14 +243,15 @@ struct Sell2_1: View {
                     }
           
                     .sheet(isPresented: $GoToDetails) {
-                        Product_Details(post: $post, posts: $posts)
+                        Product_Details(post: $post, posts: $posts, ProdictsDetails: DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: post))
                     }
                 
 //                Image(uiImage: post)
 //                    .resizable()
 //                    .scaledToFit()
 //                    .frame(width: 100, height: 100)
-                
+               
+                    .navigationBarHidden(true)
             }
 //            .navigationTitle("\(StoreName)")
 //        }
@@ -255,7 +259,9 @@ struct Sell2_1: View {
 }
 
 struct Sell2_1_Previews: PreviewProvider {
+    
+    
     static var previews: some View {
-        Sell2_1(image: .constant(UIImage(named: "white")!), StoreName: .constant("store name"), storesName: .constant([UIImage(named: "Ananas")!]))
+        Sell2_1(image: .constant(UIImage(named: "white")!), StoreName: .constant("store name"), storesName: .constant([UIImage(named: "Ananas")!]), ProdictsDetails: DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage()), shopDet: .constant(shopModel(shopName: "", shopLogo: UIImage())))
     }
 }

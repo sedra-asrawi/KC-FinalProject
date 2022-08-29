@@ -126,7 +126,7 @@ struct Sell1: View {
 
                                 NavigationLink {
                                      
-                                    Sell2_1(image: $image, StoreName: $StoreName, storesName: $storesName)
+                                    Sell2_1(image: $image, StoreName: $StoreName, storesName: $storesName, ProdictsDetails: DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage()))
                                         .navigationBarBackButtonHidden(true)
 //
                                 } label: {

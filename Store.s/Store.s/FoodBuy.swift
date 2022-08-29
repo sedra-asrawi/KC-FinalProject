@@ -14,11 +14,12 @@ struct FoodBuy: View {
     @Binding var shopsName : String
     @State var flashSale = ["red","white"]
     let popular = ["rositowarag3enab","TheBakery","Velvet.kwt","Cloudyy.Cakes"]
+    @Binding var shopDet : shopModel
 
     
     
     var body: some View {
-                NavigationView{
+//                NavigationView{
         VStack {
             
             HStack{
@@ -98,12 +99,12 @@ struct FoodBuy: View {
                                             
                                             NavigationLink {
                                                 
-                                                Buy2()
+                                                Buy2(prodName: .constant(""), productDet: .constant(DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage())), products: .constant([UIImage()]))
                                                 
                                             } label: {
                                                 HStack{
                                                     VStack{
-                                                        Image(uiImage: shop)
+                                                        Image(uiImage: shopDet.shopLogo)
                                                             .resizable()
                                                             .scaledToFill()
                                                             .clipShape(Rectangle())
@@ -113,7 +114,7 @@ struct FoodBuy: View {
                                                             .shadow(color:.gray, radius: 6)
 
                                                             
-                                                        Text("Ananas")
+                                                        Text(shopDet.shopName)
                                                             .font(.headline)
                                                             .foregroundColor(.black)
                                                                     
@@ -227,13 +228,13 @@ struct FoodBuy: View {
                 
 
 
-                }
+//                }
     }
 }
 
 struct FoodBuy_Previews: PreviewProvider {
     static var previews: some View {
-        FoodBuy(shops: .constant([UIImage(named: "Ananas")!]), shopsName: .constant("Ananas")
+        FoodBuy(shops: .constant([UIImage(named: "Ananas")!]), shopsName: .constant("Ananas"), shopDet: .constant(shopModel(shopName: "", shopLogo: UIImage()))
         )
     }
 }

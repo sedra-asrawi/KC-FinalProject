@@ -17,6 +17,10 @@ struct Product_Details: View {
     @Binding var posts : [UIImage]
     @State var savetitle = "Save"
     @State var saveback = Color("Color2")
+    
+    @State var showerror = false
+    
+    @State var ProdictsDetails : DetailsModel
    
     var body: some View {
         ZStack{
@@ -30,15 +34,20 @@ struct Product_Details: View {
                     .ignoresSafeArea()
                     .frame(width: 390, height: 390)
                 
+                    .alert(isPresented: $showerror) {
+                        Alert(title: Text("Forgot Something? 👀"),
+                              message: Text("please add the product's photo"),
+                              dismissButton: .cancel()) }
+                
                 VStack{
                     HStack {
                         Text("Ptoduct Name : ")
                             .font(.headline)
                             .fontWeight(.medium)
-                        TextField("Product Name", text: $ProductName)
+                        TextField("Product Name", text: $ProdictsDetails.prodName)
                             .padding(7)
                             .background(Color("Color3").opacity(0.3))
-                            .cornerRadius(10)
+                            .cornerRadius(1)
                     }.padding()
                         
                     Divider()
@@ -47,12 +56,14 @@ struct Product_Details: View {
                         Text("Ptoduct Details : ")
                             .font(.headline)
                             .fontWeight(.medium)
-                        TextEditor(text: $ProductDetails)
+                        Spacer()
+                        TextEditor(text: $ProdictsDetails.prodDet)
                             .foregroundColor(.black)
                             .colorMultiply(Color("Color3").opacity(0.3))
-                            .frame(width: 280, height: 130, alignment: .leading)
-                            .cornerRadius(20)
-                    }
+                            .frame(width: 250, height: 130, alignment: .leading)
+                        
+                            .cornerRadius(1)
+                    }.padding(.horizontal)
                     
                     Divider()
                         .padding()
@@ -61,10 +72,10 @@ struct Product_Details: View {
                         Text("Ptoduct Price: ")
                             .font(.headline)
                             .fontWeight(.medium)
-                        TextField("Product Price", text: $ProductPrice)
+                        TextField("Product Price", text: $ProdictsDetails.prodPrice)
                             .padding(7)
                             .background(Color("Color3").opacity(0.3))
-                            .cornerRadius(10)
+                            .cornerRadius(1)
                         Text("KD")
                             .font(.headline)
                             .fontWeight(.medium)
@@ -99,10 +110,18 @@ struct Product_Details: View {
                         
                         Button {
                             
-                            posts.append(post)
-                            savetitle = "Saved!"
-                            saveback = Color("Color4")
-                            
+                            if post !== UIImage(named: "white")! {
+                               
+                                posts.insert(post, at: 0)
+                                savetitle = "Saved!"
+                                saveback = Color("Color4")
+                                
+                            }
+                            else{
+                                
+                                showerror = true
+                            }
+                          
                         } label: {
                             Text(savetitle)
                                 .fontWeight(.medium)
@@ -133,6 +152,6 @@ struct Product_Details: View {
 
 struct Product_Details_Previews: PreviewProvider {
     static var previews: some View {
-        Product_Details(post: .constant(UIImage(named: "red")!), posts: .constant([UIImage(named: "white")!]))
+        Product_Details(post: .constant(UIImage(named: "red")!), posts: .constant([UIImage(named: "white")!]), ProdictsDetails: DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage()))
     }
 }

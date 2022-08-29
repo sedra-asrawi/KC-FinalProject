@@ -170,7 +170,7 @@ struct Sell2: View {
                 }
               
                         .sheet(isPresented: $GoToDetails) {
-                            Product_Details(post: $post, posts: $posts)
+                            Product_Details(post: $post, posts: $posts, ProdictsDetails: DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage()))
                         }
                 
             

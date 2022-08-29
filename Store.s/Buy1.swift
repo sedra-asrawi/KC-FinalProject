@@ -59,8 +59,8 @@ struct Buy1: View {
 
                             NavigationLink {
                                 
-                                FoodBuy(shops: $storeName, shopsName: $shopsName)
-                                    .navigationBarBackButtonHidden(false)
+                                FoodBuy(shops: $storeName, shopsName: $shopsName, shopDet: .constant(shopModel(shopName: "", shopLogo: UIImage())))
+                                        
                             } label: {
                                 ZStack{
 
