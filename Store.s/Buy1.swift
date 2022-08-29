@@ -92,7 +92,7 @@ struct Buy1: View {
                             
                             NavigationLink {
                                 
-                                GiftsBuy(giftsshopsArray: $foodstoresArray, shopsName: .constant(""),shopDet: $shopDet)
+                                GiftsBuy(giftsshopsArray: $giftsstoresArray, shopsName: .constant(""),shopDet: $shopDet)
                                 
                             } label: {
                                 ZStack{
@@ -122,7 +122,7 @@ struct Buy1: View {
                             
                             NavigationLink {
                                 
-                                ClothesBuy(clothesshopsArray: $foodstoresArray, shopsName: .constant(""),shopDet: $shopDet)
+                                ClothesBuy(clothesshopsArray: $clothesstoresArray, shopsName: .constant(""),shopDet: $shopDet)
                                 
                             } label: {
                                 ZStack{
@@ -152,7 +152,7 @@ struct Buy1: View {
                             
                             NavigationLink {
                                 
-                                TechnologyBuy(technoshopsArray: $foodstoresArray, shopsName: .constant(""),shopDet: $shopDet)
+                                TechnologyBuy(technoshopsArray: $technostoresArray, shopsName: .constant(""),shopDet: $shopDet)
                                 
                             } label: {
                                 ZStack{
@@ -182,7 +182,7 @@ struct Buy1: View {
                             
                             NavigationLink {
                                 
-                                OtherBuy(othershopsArray: $foodstoresArray, shopsName: .constant(""),shopDet: $shopDet)
+                                OtherBuy(othershopsArray: $otherstoresArray, shopsName: .constant(""),shopDet: $shopDet)
                                 
                             } label: {
                                 ZStack{
