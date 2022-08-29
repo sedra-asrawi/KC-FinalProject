@@ -13,7 +13,13 @@ struct Sell2_1: View {
     @Binding var StoreName : String
     @State var publishText = "Publish My Store"
     @State var publishColor = Color("Color2")
+    
     @Binding var foodstoresArray : [shopModel]
+    @Binding var giftsstoresArray : [shopModel]
+    @Binding var clothesstoresArray : [shopModel]
+    @Binding var technostoresArray : [shopModel]
+    @Binding var otherstoresArray : [shopModel]
+
     
     let colums :[GridItem] = [
         GridItem(.fixed(120)),
@@ -76,15 +82,47 @@ struct Sell2_1: View {
                             
                             Button {
                                 
-                                if publishColor == Color("Color2"){
+                                if publishColor == Color("Color2") && shopDet.shoptype == "food" {
                                     foodstoresArray.insert(shopDet, at: 0)
-     //                                publishText = "Your Store is out !"
                                      publishImage = "megaphone.fill"
                                      publishColor = Color("Color4")
                                 }
+                                
+                                else if publishColor == Color("Color2") && shopDet.shoptype == "gifts" {
+                                    
+                                    giftsstoresArray.insert(shopDet, at: 0)
+                                     publishImage = "megaphone.fill"
+                                     publishColor = Color("Color4")
+                                    
+                                }
+                                
+                                else if publishColor == Color("Color2") && shopDet.shoptype == "clothes" {
+                                    
+                                    clothesstoresArray.insert(shopDet, at: 0)
+                                     publishImage = "megaphone.fill"
+                                     publishColor = Color("Color4")
+                                    
+                                }
+                                
+                                else if publishColor == Color("Color2") && shopDet.shoptype == "technology" {
+                                    
+                                    technostoresArray.insert(shopDet, at: 0)
+                                     publishImage = "megaphone.fill"
+                                     publishColor = Color("Color4")
+                                    
+                                }
+                                
+                                else if publishColor == Color("Color2") && shopDet.shoptype == "other" {
+                                    
+                                    otherstoresArray.insert(shopDet, at: 0)
+                                     publishImage = "megaphone.fill"
+                                     publishColor = Color("Color4")
+                                    
+                                }
+                                
                                 else {
                                     
-                                    foodstoresArray.removeAll()
+                                    otherstoresArray.removeAll()
      //                                publishText = "Your Store is out !"
                                      publishImage = "megaphone"
                                      publishColor = Color("Color2")
@@ -222,7 +260,13 @@ struct Sell2_1: View {
                 
                 
                 NavigationLink {
-                    NavigationBar(username2: "Sedra", foodstoreArray: $foodstoresArray, shopsName: $StoreName, shopDet: $shopDet)
+                    NavigationBar(username2: "Sedra",
+                                  foodstoreArray: $foodstoresArray,
+                                  shopDet: $shopDet,
+                                  giftsstoresArray: $giftsstoresArray,
+                                  clothesstoresArray: $clothesstoresArray,
+                                  technostoresArray: $technostoresArray,
+                                  otherstoresArray: $otherstoresArray)
                         .navigationBarBackButtonHidden(true)
                 } label: {
                     Image("Home")
@@ -262,6 +306,13 @@ struct Sell2_1_Previews: PreviewProvider {
     
     
     static var previews: some View {
-        Sell2_1(image: .constant(UIImage(named: "white")!), StoreName: .constant("store name"), foodstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), ProdictsDetails: DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage()), shopDet: .constant(shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")))
+        Sell2_1(image: .constant(UIImage(named: "white")!), StoreName: .constant("store name"), foodstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), giftsstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), clothesstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), technostoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), otherstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), ProdictsDetails: DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage()), shopDet: .constant(shopModel(shopName: "", shopLogo: UIImage(), shoptype: ""))
+        
+        
+        
+        )
     }
 }
+
+//
+//, giftsstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), clothesstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), technostoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), otherstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")])

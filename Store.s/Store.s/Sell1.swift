@@ -14,18 +14,23 @@ struct Sell1: View {
     @State var iconback : Color = .clear
     @State var StoreName = ""
     @State var StoreType = ""
-    @State var types = ["other","food","gifts","clothes","technology"]
+    @State var types = ["food","gifts","clothes","technology","other"]
     @State var selectedNumber: Int = 0
     @State var logo = UIImage(named: "white")!
     @State var isShowingImagePicker = false
     @State private var image = UIImage(named: "white")!
     @State private var showSheet = false
-    @State var foodstoresArray : [shopModel]
     
     @State var shopDet : shopModel
 
     
+    @State var foodstoresArray : [shopModel]
+    @State var giftsstoresArray : [shopModel]
+    @State var clothesstoresArray : [shopModel]
+    @State var technostoresArray : [shopModel]
+    @State var otherstoresArray : [shopModel]
   
+    
     
     var body: some View {
         
@@ -128,7 +133,14 @@ struct Sell1: View {
 
                                 NavigationLink {
                                      
-                                    Sell2_1(image: $image, StoreName: .constant(""), foodstoresArray: .constant([shopModel(shopName: shopDet.shopName, shopLogo: shopDet.shopLogo, shoptype: shopDet.shoptype)]), ProdictsDetails: DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage()), shopDet: .constant(shopModel(shopName: shopDet.shopName, shopLogo: shopDet.shopLogo, shoptype: shopDet.shoptype)))
+                                    Sell2_1(image: $image, StoreName: .constant(""), foodstoresArray: $foodstoresArray, giftsstoresArray: $giftsstoresArray, clothesstoresArray: $clothesstoresArray, technostoresArray: $technostoresArray, otherstoresArray: $otherstoresArray, ProdictsDetails: DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage()), shopDet: .constant(shopModel(shopName: shopDet.shopName, shopLogo: shopDet.shopLogo, shoptype: shopDet.shoptype))
+                                    
+                                            
+//                                            Sell2_1(image: $image, StoreName: .constant(""), foodstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), giftsstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), clothesstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), technostoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), otherstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), ProdictsDetails: DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage()), shopDet: .constant(shopModel(shopName: shopDet.shopName, shopLogo: shopDet.shopLogo, shoptype: shopDet.shoptype))
+//
+//                                            )
+                                            
+                                    )
                                         .navigationBarBackButtonHidden(true)
 //
                                 } label: {
@@ -180,7 +192,18 @@ struct Sell1: View {
 
 struct Sell1_Previews: PreviewProvider {
     static var previews: some View {
-        Sell1(StoreName: "", foodstoresArray: [shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")], shopDet: shopModel(shopName: "", shopLogo: UIImage(), shoptype: ""))
+        Sell1(StoreName: "", shopDet: shopModel(shopName: "", shopLogo: UIImage(), shoptype: ""),
+              
+              foodstoresArray: [shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")],
+              
+              giftsstoresArray: [shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")],
+              
+              clothesstoresArray: [shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")],
+              
+              technostoresArray: [shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")],
+              
+              otherstoresArray: [shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]
+        )
     }
 }
 }

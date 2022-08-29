@@ -104,7 +104,7 @@ struct FoodBuy: View {
                                             } label: {
                                                 HStack{
                                                     VStack{
-                                                        Image(uiImage: shopDet.shopLogo)
+                                                        Image(uiImage: shop.shopLogo)
                                                             .resizable()
                                                             .scaledToFill()
                                                             .clipShape(Rectangle())
@@ -114,7 +114,7 @@ struct FoodBuy: View {
                                                             .shadow(color:.gray, radius: 6)
 
                                                             
-                                                        Text(shopDet.shopName)
+                                                        Text(shop.shopName)
                                                             .font(.headline)
                                                             .foregroundColor(.black)
                                                                     

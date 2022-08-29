@@ -14,10 +14,12 @@ struct NavigationBar: View {
     @State var selction : String = "home"
     @State var username2 : String
     @Binding var foodstoreArray : [shopModel]
-    @Binding var shopsName : String
     @Binding var shopDet : shopModel
 
-
+    @Binding var giftsstoresArray : [shopModel]
+    @Binding var clothesstoresArray : [shopModel]
+    @Binding var technostoresArray : [shopModel]
+    @Binding var otherstoresArray : [shopModel]
 
 
     
@@ -35,7 +37,10 @@ struct NavigationBar: View {
                     .tag(1)
                 
                 
-                Home(username: $username2, foodstoresArray: $foodstoreArray, shopsName: $shopsName, shopsDet: $shopDet)
+                Home(username: $username2, foodstoresArray: $foodstoreArray, giftsstoresArray: $giftsstoresArray, clothesstoresArray: $clothesstoresArray, technostoresArray: $technostoresArray, otherstoresArray: $otherstoresArray,shopsDet: $shopDet)
+                
+                     
+                
                     .ignoresSafeArea(edges: .top)
                     .tabItem {
                         Image(systemName: "house")
@@ -64,6 +69,8 @@ struct NavigationBar: View {
 
 struct NavigationBar_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationBar(username2: "", foodstoreArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), shopsName: .constant(""), shopDet: .constant(shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")))
+        NavigationBar(username2: "", foodstoreArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), shopDet: .constant(shopModel(shopName: "", shopLogo: UIImage(), shoptype: ""))
+                      , giftsstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), clothesstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), technostoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), otherstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")])
+        )
     }
 }

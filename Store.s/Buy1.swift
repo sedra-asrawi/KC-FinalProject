@@ -11,10 +11,12 @@ struct Buy1: View {
 
     @State var types = ["food","gifts","clothes","technology","other"]
     @Binding var foodstoresArray : [shopModel]
-    @Binding var shopsName : String
     @Binding var shopDet : shopModel
 
-    
+    @Binding var giftsstoresArray : [shopModel]
+    @Binding var clothesstoresArray : [shopModel]
+    @Binding var technostoresArray : [shopModel]
+    @Binding var otherstoresArray : [shopModel]
 
     var body: some View {
 //        NavigationView {
@@ -90,6 +92,7 @@ struct Buy1: View {
                             
                             NavigationLink {
                                 
+                                GiftsBuy(giftsshopsArray: $foodstoresArray, shopsName: .constant(""),shopDet: $shopDet)
                                 
                             } label: {
                                 ZStack{
@@ -119,6 +122,7 @@ struct Buy1: View {
                             
                             NavigationLink {
                                 
+                                ClothesBuy(clothesshopsArray: $foodstoresArray, shopsName: .constant(""),shopDet: $shopDet)
                                 
                             } label: {
                                 ZStack{
@@ -148,6 +152,7 @@ struct Buy1: View {
                             
                             NavigationLink {
                                 
+                                TechnologyBuy(technoshopsArray: $foodstoresArray, shopsName: .constant(""),shopDet: $shopDet)
                                 
                             } label: {
                                 ZStack{
@@ -177,6 +182,7 @@ struct Buy1: View {
                             
                             NavigationLink {
                                 
+                                OtherBuy(othershopsArray: $foodstoresArray, shopsName: .constant(""),shopDet: $shopDet)
                                 
                             } label: {
                                 ZStack{
@@ -222,6 +228,7 @@ struct Buy1: View {
 
 struct Buy1_1_Previews: PreviewProvider {
     static var previews: some View {
-        Buy1(foodstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), shopsName: .constant(""), shopDet: .constant(shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")))
+        Buy1(foodstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), shopDet: .constant(shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")), giftsstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), clothesstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), technostoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), otherstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")])
+        )
     }
 }
