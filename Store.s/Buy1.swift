@@ -10,8 +10,9 @@ import SwiftUI
 struct Buy1: View {
 
     @State var types = ["food","gifts","clothes","technology","other"]
-    @Binding var storeName : [UIImage]
+    @Binding var foodstoresArray : [shopModel]
     @Binding var shopsName : String
+    @Binding var shopDet : shopModel
 
     
 
@@ -59,7 +60,7 @@ struct Buy1: View {
 
                             NavigationLink {
                                 
-                                FoodBuy(shops: $storeName, shopsName: $shopsName, shopDet: .constant(shopModel(shopName: "", shopLogo: UIImage())))
+                                FoodBuy(foodshopsArray: $foodstoresArray, shopsName: .constant(""),shopDet: $shopDet)
                                         
                             } label: {
                                 ZStack{
@@ -221,6 +222,6 @@ struct Buy1: View {
 
 struct Buy1_1_Previews: PreviewProvider {
     static var previews: some View {
-        Buy1(storeName: .constant([UIImage(named: "Ananas")!]), shopsName: .constant("Ananas"))
+        Buy1(foodstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), shopsName: .constant(""), shopDet: .constant(shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")))
     }
 }

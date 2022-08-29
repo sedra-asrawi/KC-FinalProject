@@ -10,7 +10,7 @@ import SwiftUI
 struct FoodBuy: View {
     
     let colors = [Color.white,Color("Color3")]
-    @Binding var shops : [UIImage]
+    @Binding var foodshopsArray : [shopModel]
     @Binding var shopsName : String
     @State var flashSale = ["red","white"]
     let popular = ["rositowarag3enab","TheBakery","Velvet.kwt","Cloudyy.Cakes"]
@@ -94,7 +94,7 @@ struct FoodBuy: View {
                                 ScrollView(.horizontal){
                                     
                                     HStack {
-                                        ForEach(shops, id: \.self){
+                                        ForEach(foodshopsArray, id: \.self){
                                             shop in
                                             
                                             NavigationLink {
@@ -234,7 +234,7 @@ struct FoodBuy: View {
 
 struct FoodBuy_Previews: PreviewProvider {
     static var previews: some View {
-        FoodBuy(shops: .constant([UIImage(named: "Ananas")!]), shopsName: .constant("Ananas"), shopDet: .constant(shopModel(shopName: "", shopLogo: UIImage()))
+        FoodBuy(foodshopsArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), shopsName: .constant("Ananas"), shopDet: .constant(shopModel(shopName: "Ananas", shopLogo: UIImage(named: "Ananas")!, shoptype: ""))
         )
     }
 }

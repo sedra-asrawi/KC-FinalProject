@@ -20,8 +20,10 @@ struct Sell1: View {
     @State var isShowingImagePicker = false
     @State private var image = UIImage(named: "white")!
     @State private var showSheet = false
-    @State var storesName : [UIImage]
+    @State var foodstoresArray : [shopModel]
     
+    @State var shopDet : shopModel
+
     
   
     
@@ -61,7 +63,7 @@ struct Sell1: View {
                                 
                                 Spacer()
                                 
-                                TextField("Store Name", text: $StoreName)
+                                TextField("Store Name", text: $shopDet.shopName)
                                     .padding()
                                     .background(.white)
                                     .cornerRadius(7)
@@ -71,7 +73,7 @@ struct Sell1: View {
                                 
                                 
                                 Menu("Choose Store's Speciality") {
-                                        Picker("Please choose a color", selection: $StoreType)
+                                    Picker("Please choose a color", selection: $shopDet.shoptype)
                                         {
                                             ForEach(types, id: \.self) {
                                                 Text($0)
@@ -92,7 +94,7 @@ struct Sell1: View {
                                         .fontWeight(.medium)
                                         .foregroundColor(Color("Color2"))
                                     
-                                    Text("\(StoreType)")
+                                    Text("\(shopDet.shoptype)")
                                         .fontWeight(.bold)
                                         .foregroundColor(Color("Color2"))
                                     
@@ -116,7 +118,7 @@ struct Sell1: View {
                                         .padding()
                             }
                                 
-                                Image(uiImage: self.image)
+                                Image(uiImage: self.shopDet.shopLogo)
                                     .resizable()
                                     .scaledToFit()
                                     .clipShape(Circle())
@@ -126,7 +128,7 @@ struct Sell1: View {
 
                                 NavigationLink {
                                      
-                                    Sell2_1(image: $image, StoreName: $StoreName, storesName: $storesName, ProdictsDetails: DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage()))
+                                    Sell2_1(image: $image, StoreName: .constant(""), foodstoresArray: .constant([shopModel(shopName: shopDet.shopName, shopLogo: shopDet.shopLogo, shoptype: shopDet.shoptype)]), ProdictsDetails: DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage()), shopDet: .constant(shopModel(shopName: shopDet.shopName, shopLogo: shopDet.shopLogo, shoptype: shopDet.shoptype)))
                                         .navigationBarBackButtonHidden(true)
 //
                                 } label: {
@@ -153,14 +155,21 @@ struct Sell1: View {
                                }
                         .padding(.bottom,50)
                         .sheet(isPresented: $showSheet) {
-                                ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
+                            ImagePicker(sourceType: .photoLibrary, selectedImage: self.$shopDet.shopLogo)
                     }
+                
+                
+         
+                
             }
            
        
         
             
+     
 
+        
+        
         }
 
     
@@ -171,7 +180,7 @@ struct Sell1: View {
 
 struct Sell1_Previews: PreviewProvider {
     static var previews: some View {
-        Sell1(storesName: [UIImage(named: "Ananas")!])
+        Sell1(StoreName: "", foodstoresArray: [shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")], shopDet: shopModel(shopName: "", shopLogo: UIImage(), shoptype: ""))
     }
 }
 }

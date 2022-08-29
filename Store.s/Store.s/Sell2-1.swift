@@ -13,7 +13,7 @@ struct Sell2_1: View {
     @Binding var StoreName : String
     @State var publishText = "Publish My Store"
     @State var publishColor = Color("Color2")
-    @Binding var storesName : [UIImage]
+    @Binding var foodstoresArray : [shopModel]
     
     let colums :[GridItem] = [
         GridItem(.fixed(120)),
@@ -49,7 +49,7 @@ struct Sell2_1: View {
                     
                     HStack{
                         
-                        Text("\(StoreName)")
+                        Text(shopDet.shopName)
                             .font(.system(size: 25))
                         .fontWeight(.bold)
                         
@@ -77,14 +77,14 @@ struct Sell2_1: View {
                             Button {
                                 
                                 if publishColor == Color("Color2"){
-                                    storesName.insert(image, at: 0)
+                                    foodstoresArray.insert(shopDet, at: 0)
      //                                publishText = "Your Store is out !"
                                      publishImage = "megaphone.fill"
                                      publishColor = Color("Color4")
                                 }
                                 else {
                                     
-                                    storesName.removeAll()
+                                    foodstoresArray.removeAll()
      //                                publishText = "Your Store is out !"
                                      publishImage = "megaphone"
                                      publishColor = Color("Color2")
@@ -142,7 +142,7 @@ struct Sell2_1: View {
                     ScrollView {
                         
                         HStack {
-                            Image(uiImage: image)
+                            Image(uiImage: shopDet.shopLogo)
                                 .resizable()
                                 .scaledToFit()
                                 .clipShape(Circle())
@@ -222,7 +222,7 @@ struct Sell2_1: View {
                 
                 
                 NavigationLink {
-                    NavigationBar(username2: "Sedra", storeName: $storesName, shopsName: $StoreName)
+                    NavigationBar(username2: "Sedra", foodstoreArray: $foodstoresArray, shopsName: $StoreName, shopDet: $shopDet)
                         .navigationBarBackButtonHidden(true)
                 } label: {
                     Image("Home")
@@ -262,6 +262,6 @@ struct Sell2_1_Previews: PreviewProvider {
     
     
     static var previews: some View {
-        Sell2_1(image: .constant(UIImage(named: "white")!), StoreName: .constant("store name"), storesName: .constant([UIImage(named: "Ananas")!]), ProdictsDetails: DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage()), shopDet: .constant(shopModel(shopName: "", shopLogo: UIImage())))
+        Sell2_1(image: .constant(UIImage(named: "white")!), StoreName: .constant("store name"), foodstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), ProdictsDetails: DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage()), shopDet: .constant(shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")))
     }
 }

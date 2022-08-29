@@ -8,11 +8,12 @@
 import Foundation
 import UIKit
 
-struct shopModel : Identifiable {
+struct shopModel : Hashable {
     
     var id = UUID()
     var shopName : String
     var shopLogo : UIImage
+    var shoptype : String
 
     
 }

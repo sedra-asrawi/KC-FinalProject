@@ -70,7 +70,7 @@ struct ContentView: View {
                     
                     
                     NavigationLink {
-                        NavigationBar(username2: username, storeName: .constant([UIImage(named: "Ananas")!]), shopsName: .constant("Ananas"))
+                        NavigationBar(username2: username, foodstoreArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), shopsName: .constant("Ananas"), shopDet: .constant(shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")))
                             .navigationBarBackButtonHidden(true)
                     } label: {
                         Text("Let's Start")
