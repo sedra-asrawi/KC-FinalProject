@@ -34,11 +34,19 @@ struct Sell2_1: View {
     @State var closeDetails = false
     @State var publishImage = "megaphone"
     
-    @State var ProdictsDetails : DetailsModel
+    
+    @Binding var ProductDet : DetailsModel
+    
     @Binding var shopDet : shopModel
+
+    @State var ProdictsArray : [DetailsModel] = []
+    
+    @State var basketArray : [DetailsModel]
+    
+    
     
     func productsNum () -> Int {
-        posts.count
+        ProdictsArray.count 
         
     }
     
@@ -67,7 +75,7 @@ struct Sell2_1: View {
                             
                             NavigationLink {
                                 
-                                Buy2(prodName: $ProdictsDetails.prodName, productDet: $ProdictsDetails, products: $posts)
+                                Buy2(products: ProdictsArray, productBuyDetails: DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage()), basketarray: $basketArray, shopDet: shopDet)
                                 
                             } label: {
 //                                Text("View My Store")
@@ -146,7 +154,7 @@ struct Sell2_1: View {
                             
                             Button {
                                 GoToDetails = true
-                                post = UIImage(named: "white")!
+                                ProductDet.prodImage = UIImage(named: "white")!
 
                                 
                             } label: {
@@ -208,8 +216,8 @@ struct Sell2_1: View {
                         
                         LazyVGrid(columns: colums, spacing: 0) {
                             
-                            ForEach(posts, id: \.self) { post in
-                                Image(uiImage: post)
+                            ForEach(ProdictsArray, id: \.self) { post in
+                                Image(uiImage: post.prodImage)
                                     .resizable()
                                     .scaledToFill()
                                     .frame(width:120, height: 120)
@@ -254,40 +262,40 @@ struct Sell2_1: View {
 
                     
                     
-                    
+                    NavigationLink {
+                        NavigationBar(username2: "Sedra",
+                                      foodstoreArray: foodstoresArray,
+                                      shopDet: $shopDet,
+                                      giftsstoresArray: giftsstoresArray,
+                                      clothesstoresArray: clothesstoresArray,
+                                      technostoresArray: technostoresArray,
+                                      otherstoresArray: otherstoresArray, productsArray: $ProdictsArray, basketArray: basketArray)
+                            .navigationBarBackButtonHidden(true)
+                    } label: {
+                        Image("Home")
+                            .resizable()
+                            .scaledToFit()
+                        
+                            .frame(width: 40, height: 40)
+                            .padding()
+                           
+                            
+                    }
                     
                 }.frame(width: 390, height: 700)
                 
                 
-                NavigationLink {
-                    NavigationBar(username2: "Sedra",
-                                  foodstoreArray: $foodstoresArray,
-                                  shopDet: $shopDet,
-                                  giftsstoresArray: $giftsstoresArray,
-                                  clothesstoresArray: $clothesstoresArray,
-                                  technostoresArray: $technostoresArray,
-                                  otherstoresArray: $otherstoresArray)
-                        .navigationBarBackButtonHidden(true)
-                } label: {
-                    Image("Home")
-                        .resizable()
-                        .scaledToFit()
-                    
-                        .frame(width: 40, height: 40)
-                        .padding(.top,640)
-                       
-                        
-                }
+              
                 
                     .sheet(isPresented: $showSheet) {
                             ImagePicker(sourceType: .photoLibrary, selectedImage:
 //                                            self.
-                                        $post)
+                                        $ProductDet.prodImage)
                         
                     }
           
                     .sheet(isPresented: $GoToDetails) {
-                        Product_Details(post: $post, posts: $posts, ProdictsDetails: DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: post))
+                        Product_Details(postsArray: $ProdictsArray, ProdictsDetails: ProductDet)
                     }
                 
 //                Image(uiImage: post)
@@ -306,7 +314,28 @@ struct Sell2_1_Previews: PreviewProvider {
     
     
     static var previews: some View {
-        Sell2_1(image: .constant(UIImage(named: "white")!), StoreName: .constant("store name"), foodstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), giftsstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), clothesstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), technostoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), otherstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), ProdictsDetails: DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage()), shopDet: .constant(shopModel(shopName: "", shopLogo: UIImage(), shoptype: ""))
+        Sell2_1(
+            
+            image: .constant(UIImage(named: "white")!),
+            
+                StoreName: .constant("store name"),
+            
+                foodstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]),
+            
+                giftsstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]),
+            
+                clothesstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]),
+            
+                technostoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]),
+            
+                otherstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]),
+                
+            ProductDet: .constant(DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage(named: "white")!)),
+                
+            shopDet: .constant(shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")),
+            basketArray: [DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage())]
+                
+            
         
         
         

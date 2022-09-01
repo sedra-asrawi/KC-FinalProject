@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct Product_Details: View {
-    @Binding var post : UIImage
-    @State var ProductName = ""
-    @State var ProductDetails = ""
-    @State var ProductPrice = ""
+//    @Binding var post : UIImage
+//    @Binding var ProductName : String
+//    @Binding var ProductDetails : String
+//    @Binding var ProductPrice : String
     @State private var showSheet = false
 
-    @Binding var posts : [UIImage]
+    @Binding var postsArray : [DetailsModel]
     @State var savetitle = "Save"
     @State var saveback = Color("Color2")
     
@@ -27,7 +27,7 @@ struct Product_Details: View {
             
             VStack{
                 
-                Image(uiImage: post)
+                Image(uiImage: self.ProdictsDetails.prodImage)
                     .resizable()
                     .scaledToFit()
                     .cornerRadius(40)
@@ -36,7 +36,7 @@ struct Product_Details: View {
                 
                     .alert(isPresented: $showerror) {
                         Alert(title: Text("Forgot Something? 👀"),
-                              message: Text("please add the product's photo"),
+                              message: Text("please add the product's info"),
                               dismissButton: .cancel()) }
                 
                 VStack{
@@ -110,16 +110,16 @@ struct Product_Details: View {
                         
                         Button {
                             
-                            if post !== UIImage(named: "white")! {
-                               
-                                posts.insert(post, at: 0)
+                            if ProdictsDetails.prodImage == UIImage(named: "white")! || ProdictsDetails.prodName == "" || ProdictsDetails.prodDet == "" || ProdictsDetails.prodPrice == "" {
+                          
+                                showerror = true
+
+                            }
+                            else {
+                                
+                                postsArray.insert(ProdictsDetails, at: 0)
                                 savetitle = "Saved!"
                                 saveback = Color("Color4")
-                                
-                            }
-                            else{
-                                
-                                showerror = true
                             }
                           
                         } label: {
@@ -145,13 +145,17 @@ struct Product_Details: View {
             
             
                 .sheet(isPresented: $showSheet) {
-                    ImagePicker(sourceType: .photoLibrary, selectedImage: self.$post) }
+                    ImagePicker(sourceType: .photoLibrary, selectedImage: self.$ProdictsDetails.prodImage)
+            }
         }
     }
 }
 
 struct Product_Details_Previews: PreviewProvider {
     static var previews: some View {
-        Product_Details(post: .constant(UIImage(named: "red")!), posts: .constant([UIImage(named: "white")!]), ProdictsDetails: DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage()))
+        Product_Details(postsArray: .constant([DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage(named: "white")!)]), ProdictsDetails: DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage(named: "white")!)
+//                        ,ProdictsDetails: .constant(DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage()))
+        )
     }
 }
+

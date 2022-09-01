@@ -30,7 +30,8 @@ struct Sell1: View {
     @State var technostoresArray : [shopModel]
     @State var otherstoresArray : [shopModel]
   
-    
+    @State var basketArray : [DetailsModel]
+
     
     var body: some View {
         
@@ -133,14 +134,21 @@ struct Sell1: View {
 
                                 NavigationLink {
                                      
-                                    Sell2_1(image: $image, StoreName: .constant(""), foodstoresArray: $foodstoresArray, giftsstoresArray: $giftsstoresArray, clothesstoresArray: $clothesstoresArray, technostoresArray: $technostoresArray, otherstoresArray: $otherstoresArray, ProdictsDetails: DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage()), shopDet: .constant(shopModel(shopName: shopDet.shopName, shopLogo: shopDet.shopLogo, shoptype: shopDet.shoptype))
-                                    
-                                            
+                                    Sell2_1(image: $image,
+                                            StoreName: .constant(""),
+                                            foodstoresArray: $foodstoresArray,
+                                            giftsstoresArray: $giftsstoresArray,
+                                            clothesstoresArray: $clothesstoresArray,
+                                            technostoresArray: $technostoresArray,
+                                            otherstoresArray: $otherstoresArray,
+                                            ProductDet: .constant(DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage(named: "white")!)),
+                                            shopDet: .constant(shopModel(shopName: shopDet.shopName, shopLogo: shopDet.shopLogo, shoptype: shopDet.shoptype)), basketArray: basketArray
+                                            )
 //                                            Sell2_1(image: $image, StoreName: .constant(""), foodstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), giftsstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), clothesstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), technostoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), otherstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), ProdictsDetails: DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage()), shopDet: .constant(shopModel(shopName: shopDet.shopName, shopLogo: shopDet.shopLogo, shoptype: shopDet.shoptype))
 //
 //                                            )
                                             
-                                    )
+                                    
                                         .navigationBarBackButtonHidden(true)
 //
                                 } label: {
@@ -192,7 +200,7 @@ struct Sell1: View {
 
 struct Sell1_Previews: PreviewProvider {
     static var previews: some View {
-        Sell1(StoreName: "", shopDet: shopModel(shopName: "", shopLogo: UIImage(), shoptype: ""),
+        Sell1(StoreName: "", shopDet: shopModel(shopName: "", shopLogo: UIImage(named: "white")!, shoptype: ""),
               
               foodstoresArray: [shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")],
               
@@ -202,7 +210,8 @@ struct Sell1_Previews: PreviewProvider {
               
               technostoresArray: [shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")],
               
-              otherstoresArray: [shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]
+              otherstoresArray: [shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")],
+              basketArray: [DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage())]
         )
     }
 }

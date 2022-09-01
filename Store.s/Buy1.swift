@@ -10,13 +10,17 @@ import SwiftUI
 struct Buy1: View {
 
     @State var types = ["food","gifts","clothes","technology","other"]
-    @Binding var foodstoresArray : [shopModel]
+    @State var foodstoresArray : [shopModel] = []
     @Binding var shopDet : shopModel
 
-    @Binding var giftsstoresArray : [shopModel]
-    @Binding var clothesstoresArray : [shopModel]
-    @Binding var technostoresArray : [shopModel]
-    @Binding var otherstoresArray : [shopModel]
+    @State var giftsstoresArray : [shopModel] = []
+    @State var clothesstoresArray : [shopModel] = []
+    @State var technostoresArray : [shopModel] = []
+    @State var otherstoresArray : [shopModel] = []
+    
+    @Binding var productsArray : [DetailsModel]
+    
+    @Binding var basketArray : [DetailsModel]
 
     var body: some View {
 //        NavigationView {
@@ -31,6 +35,7 @@ struct Buy1: View {
 
                 VStack{
 
+                    
                     Spacer()
                     
                     ZStack {
@@ -44,6 +49,22 @@ struct Buy1: View {
                                      .font(.system(size:24))
                                      .fontWeight(.bold)
                                 Spacer()
+                                 
+                                 NavigationLink {
+                                     
+                                     
+                                 } label: {
+                                     Image(systemName: "bag.fill")
+                                         .foregroundColor(Color("Color4"))
+                                         .font(.system(size: 35))
+                                         .frame(alignment: .bottomTrailing)
+                                         .overlay(Circle()
+                                            .fill(Color("Color3"))
+                                            .frame(width: 15, height: 15)
+                                                  , alignment: .bottomTrailing)
+                                 }
+
+                                 
                             }
                                 Spacer()
                          HStack {
@@ -62,7 +83,7 @@ struct Buy1: View {
 
                             NavigationLink {
                                 
-                                FoodBuy(foodshopsArray: $foodstoresArray, shopsName: .constant(""),shopDet: $shopDet)
+                                FoodBuy(foodshopsArray: foodstoresArray, shopsName: .constant(""),shopDet: $shopDet, productsArray: $productsArray, basketArray: $basketArray)
                                         
                             } label: {
                                 ZStack{
@@ -92,7 +113,7 @@ struct Buy1: View {
                             
                             NavigationLink {
                                 
-                                GiftsBuy(giftsshopsArray: $giftsstoresArray, shopsName: .constant(""),shopDet: $shopDet)
+                                GiftsBuy(giftsshopsArray: giftsstoresArray, shopsName: .constant(""),shopDet: $shopDet, productsArray: $productsArray, basketArray: basketArray)
                                 
                             } label: {
                                 ZStack{
@@ -122,7 +143,7 @@ struct Buy1: View {
                             
                             NavigationLink {
                                 
-                                ClothesBuy(clothesshopsArray: $clothesstoresArray, shopsName: .constant(""),shopDet: $shopDet)
+                                ClothesBuy(clothesshopsArray: clothesstoresArray, shopsName: .constant(""),shopDet: $shopDet, productsArray: $productsArray, basketArray: basketArray)
                                 
                             } label: {
                                 ZStack{
@@ -152,7 +173,7 @@ struct Buy1: View {
                             
                             NavigationLink {
                                 
-                                TechnologyBuy(technoshopsArray: $technostoresArray, shopsName: .constant(""),shopDet: $shopDet)
+                                TechnologyBuy(technoshopsArray: technostoresArray, shopsName: .constant(""),shopDet: $shopDet, productsArray: $productsArray, basketArray: basketArray)
                                 
                             } label: {
                                 ZStack{
@@ -182,7 +203,7 @@ struct Buy1: View {
                             
                             NavigationLink {
                                 
-                                OtherBuy(othershopsArray: $otherstoresArray, shopsName: .constant(""),shopDet: $shopDet)
+                                OtherBuy(othershopsArray: otherstoresArray, shopsName: .constant(""),shopDet: $shopDet, productsArray: $productsArray, basketArray: basketArray)
                                 
                             } label: {
                                 ZStack{
@@ -228,7 +249,7 @@ struct Buy1: View {
 
 struct Buy1_1_Previews: PreviewProvider {
     static var previews: some View {
-        Buy1(foodstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), shopDet: .constant(shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")), giftsstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), clothesstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), technostoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), otherstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")])
+        Buy1(shopDet: .constant(shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")),productsArray: .constant([DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage())]), basketArray: .constant([DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage())])
         )
     }
 }

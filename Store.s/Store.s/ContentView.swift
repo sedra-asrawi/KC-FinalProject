@@ -70,8 +70,8 @@ struct ContentView: View {
                     
                     
                     NavigationLink {
-                        NavigationBar(username2: username, foodstoreArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), shopDet: .constant(shopModel(shopName: "", shopLogo: UIImage(), shoptype: ""))
-                                      , giftsstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), clothesstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), technostoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), otherstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")])
+                        NavigationBar(username2: username, shopDet: .constant(shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")),
+                                      productsArray: .constant([DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage())]), basketArray: [DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage())]
                         )
                             .navigationBarBackButtonHidden(true)
                     } label: {

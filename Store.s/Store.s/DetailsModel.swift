@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-struct DetailsModel : Identifiable {
+struct DetailsModel : Hashable {
     
     var id = UUID()
     var prodName : String

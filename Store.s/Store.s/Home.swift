@@ -11,13 +11,17 @@ struct Home: View {
     
     @Binding var username : String
     
-    @Binding var foodstoresArray : [shopModel]
-    @Binding var giftsstoresArray : [shopModel]
-    @Binding var clothesstoresArray : [shopModel]
-    @Binding var technostoresArray : [shopModel]
-    @Binding var otherstoresArray : [shopModel]
+    @State var foodstoresArray : [shopModel] = []
+    @State var giftsstoresArray : [shopModel] = []
+    @State var clothesstoresArray : [shopModel] = []
+    @State var technostoresArray : [shopModel] = []
+    @State var otherstoresArray : [shopModel] = []
     
     @Binding var shopsDet : shopModel
+
+    @Binding var productsArray : [DetailsModel]
+    
+    @State var basketArray : [DetailsModel]
 
 
     var body: some View {
@@ -56,7 +60,10 @@ struct Home: View {
                         HStack{
                         
                             NavigationLink {
-                                Buy1(foodstoresArray: $foodstoresArray, shopDet: $shopsDet, giftsstoresArray: $giftsstoresArray, clothesstoresArray: $clothesstoresArray, technostoresArray: $technostoresArray, otherstoresArray: $otherstoresArray)
+                                
+                                Buy1(foodstoresArray: foodstoresArray, shopDet: $shopsDet, giftsstoresArray: giftsstoresArray, clothesstoresArray: clothesstoresArray, technostoresArray: technostoresArray, otherstoresArray: otherstoresArray, productsArray: $productsArray, basketArray: $basketArray)
+                               
+                                
                             } label: {
                                 VStack {
                                     Image("buy")
@@ -78,7 +85,19 @@ struct Home: View {
                             
                             
                                 NavigationLink{
-                                    Sell1(shopDet: shopsDet, foodstoresArray: foodstoresArray, giftsstoresArray: giftsstoresArray, clothesstoresArray: clothesstoresArray, technostoresArray: technostoresArray, otherstoresArray: otherstoresArray)
+                                    
+                                    if shopsDet.shopName == "" {
+                                    
+                                        Sell1(shopDet: shopsDet, foodstoresArray: foodstoresArray, giftsstoresArray: giftsstoresArray, clothesstoresArray: clothesstoresArray, technostoresArray: technostoresArray, otherstoresArray: otherstoresArray, basketArray: basketArray)}
+                                    
+                                    
+                                    else {
+                                        
+                                        Sell2_1(image: .constant(UIImage()), StoreName: .constant(""), foodstoresArray: $foodstoresArray, giftsstoresArray: $giftsstoresArray, clothesstoresArray: $clothesstoresArray, technostoresArray: $technostoresArray, otherstoresArray: $otherstoresArray, ProductDet: .constant(DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage())), shopDet: $shopsDet, basketArray: basketArray)
+                                        
+                                    }
+                                    
+                                    
                                 } label: {
                                     VStack {
                                         Image("sell")
@@ -122,7 +141,7 @@ struct Home: View {
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        Home(username: .constant("name"), foodstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")])
-             , giftsstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), clothesstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), technostoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), otherstoresArray: .constant([shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")]), shopsDet: .constant(shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")))
+        Home(username: .constant("name")
+             ,shopsDet: .constant(shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")), productsArray: .constant([DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage())]), basketArray: [DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage())])
     }
 }
