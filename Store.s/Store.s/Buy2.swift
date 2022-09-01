@@ -14,7 +14,7 @@ struct Buy2: View {
 //    @Binding var products : [UIImage]
     @State var showBuyProdDetails = false
     @State var productBuyDetails : DetailsModel
-    @Binding var basketarray : [DetailsModel]
+    @State var basketarray : [DetailsModel] = []
 
     @State var shopDet : shopModel
 
@@ -38,7 +38,7 @@ struct Buy2: View {
                                
                                
                                NavigationLink {
-                                   Buy3(ProdictsDetails: product, ProdictsDetailsArray: $products, basketArray: $basketarray)
+                                   Buy3(ProdictsDetails: product, ProdictsDetailsArray: $products, basketArray: basketarray)
                                } label: {
                                    
                    HStack{
@@ -108,6 +108,6 @@ struct Buy2: View {
 
 struct Buy2_Previews: PreviewProvider {
     static var previews: some View {
-        Buy2(productBuyDetails: DetailsModel(prodName: "name", prodDet: "det", prodPrice: "5", prodImage: UIImage(named: "Ananas")!), basketarray: .constant([DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage())]), shopDet: shopModel(shopName: "", shopLogo: UIImage(), shoptype: ""))
+        Buy2(productBuyDetails: DetailsModel(prodName: "name", prodDet: "det", prodPrice: "5", prodImage: UIImage(named: "Ananas")!), basketarray: [DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage())], shopDet: shopModel(shopName: "", shopLogo: UIImage(), shoptype: ""))
     }
 }

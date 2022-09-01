@@ -75,7 +75,7 @@ struct Sell2_1: View {
                             
                             NavigationLink {
                                 
-                                Buy2(products: ProdictsArray, productBuyDetails: DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage()), basketarray: $basketArray, shopDet: shopDet)
+                                Buy2(products: ProdictsArray, productBuyDetails: DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage()), basketarray: basketArray, shopDet: shopDet)
                                 
                             } label: {
 //                                Text("View My Store")

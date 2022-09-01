@@ -101,7 +101,7 @@ struct OtherBuy: View {
                                                 
                                                 NavigationLink {
                                                     
-                                                    Buy2(products: productsArray, productBuyDetails: DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage()), basketarray: $basketArray, shopDet: shopDet)
+                                                    Buy2(products: productsArray, productBuyDetails: DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage()), basketarray: basketArray, shopDet: shopDet)
                                                     
                                                 } label: {
                                                     HStack{

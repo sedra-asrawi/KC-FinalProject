@@ -39,7 +39,7 @@ struct NavigationBar: View {
                     .tag(1)
                 
                 
-                Home(username: $username2, foodstoresArray: foodstoreArray, giftsstoresArray: giftsstoresArray, clothesstoresArray: clothesstoresArray, technostoresArray: technostoresArray, otherstoresArray: otherstoresArray,shopsDet: $shopDet, productsArray: $productsArray, basketArray: basketArray)
+                Home(username: $username2, foodstoresArray: foodstoreArray, giftsstoresArray: giftsstoresArray, clothesstoresArray: clothesstoresArray, technostoresArray: technostoresArray, otherstoresArray: otherstoresArray,shopsDet: $shopDet, productsArray: $productsArray, basketArray: $basketArray)
                 
                      
                 

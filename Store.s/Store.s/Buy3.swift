@@ -11,7 +11,7 @@ struct Buy3: View {
     
     @State var ProdictsDetails : DetailsModel
     @Binding var ProdictsDetailsArray : [DetailsModel]
-    @Binding var basketArray : [DetailsModel]
+    @State var basketArray : [DetailsModel] = []
 
     @State var quantity = 1
 
@@ -20,6 +20,9 @@ struct Buy3: View {
         (Double(quantity) * (Double(ProdictsDetails.prodPrice) ?? 0))
     }
     
+    @State var addtobasketText = "Add To Basket For"
+    @State var addtobasketColor = Color("Color3")
+
     var body: some View {
 //        NavigationView {
             ZStack{
@@ -103,6 +106,10 @@ struct Buy3: View {
                     HStack{
                         Button {
                             quantity += 1
+                            
+                            addtobasketText = "Add To Basket For"
+                            addtobasketColor = Color("Color3")
+                            
                         } label: {
                             Image(systemName: "plus")
                                 .frame(width: 13, height: 13)
@@ -149,25 +156,44 @@ struct Buy3: View {
                         }
                     }.padding()
                     
-                    Button {
+                    HStack{
                         
-                        basketArray.insert(ProdictsDetails, at: 0)
-                        
-                    } label: {
-                        HStack{
-                            Text("Add To Basket For")
-                            Text(String(Total()))
-                        }.padding()
-                        .padding(.horizontal)
-                            .background(Color("Color3"))
-                            .cornerRadius(5)
-                            .foregroundColor(.black)
-                            .font(.headline)
-                            .shadow(color: Color("Color3"), radius: 10)
+                        NavigationLink {
+                            Basket(basketArray: basketArray, ProductsDetails: ProdictsDetails)
+                        } label: {
+                            Image(systemName: "bag.fill")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 30, height: 30)
+                                .padding(.horizontal)
+                            
+                        }
 
                         
+                        Button {
+                            
+                            basketArray.insert(ProdictsDetails, at: 0)
+                            addtobasketText = "✔️"
+                            addtobasketColor = Color("Color2")
+                            quantity = 0
+                            
+                        } label: {
+                            HStack{
+                                Text("\(addtobasketText)")
+                                Text(String(Total()))
+                            }.padding()
+                            .padding(.horizontal)
+                                .background(addtobasketColor.frame(width: 260))
+                                .frame(width: 260)
+                                .cornerRadius(5)
+                                .foregroundColor(.black)
+                                .font(.headline)
+                                .shadow(color: Color("Color3"), radius: 10)
 
-                    }
+                            
+
+                        }
+                    }.frame(width: 320)
 
                     Spacer()
                     
@@ -182,6 +208,7 @@ struct Buy3: View {
 
 struct Buy3_Previews: PreviewProvider {
     static var previews: some View {
-        Buy3(ProdictsDetails: DetailsModel(prodName: "name", prodDet: "details", prodPrice: "10", prodImage: UIImage(named: "Ananas")!),ProdictsDetailsArray: .constant([DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage())]), basketArray: .constant([DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage())]))
+        Buy3(ProdictsDetails: DetailsModel(prodName: "name", prodDet: "details", prodPrice: "10", prodImage: UIImage(named: "Ananas")!),ProdictsDetailsArray: .constant([DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage())])
+        )
     }
 }

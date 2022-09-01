@@ -21,7 +21,7 @@ struct Home: View {
 
     @Binding var productsArray : [DetailsModel]
     
-    @State var basketArray : [DetailsModel]
+    @Binding var basketArray : [DetailsModel]
 
 
     var body: some View {
@@ -142,6 +142,6 @@ struct Home: View {
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
         Home(username: .constant("name")
-             ,shopsDet: .constant(shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")), productsArray: .constant([DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage())]), basketArray: [DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage())])
+             ,shopsDet: .constant(shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")), productsArray: .constant([DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage())]), basketArray: .constant([DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage())]))
     }
 }
