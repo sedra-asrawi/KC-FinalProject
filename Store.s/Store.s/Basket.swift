@@ -14,7 +14,7 @@ struct Basket: View {
     
     
     var body: some View {
-        NavigationView {
+//        NavigationView {
             ZStack{
                     
                     Color.gray.opacity(0.1).ignoresSafeArea()
@@ -100,7 +100,7 @@ struct Basket: View {
                 
             .navigationTitle("Shopping bag")
             
-        }
+//        }
         
     }
 }
