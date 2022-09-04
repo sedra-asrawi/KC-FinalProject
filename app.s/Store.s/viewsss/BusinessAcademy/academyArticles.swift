@@ -44,7 +44,7 @@ struct academyArticles: View {
                         .background(Color("Color1").opacity(0.4))
                         .frame(width: 370)
                         .cornerRadius(10)
-                        .padding(.top,50)
+                        .padding(.top,80)
                         .shadow(color: .gray.opacity(0.3), radius: 10)
                 }
                 .padding()
@@ -82,6 +82,7 @@ struct academyArticles: View {
                     .cornerRadius(10)
                     .shadow(color: .gray.opacity(0.3), radius: 10)
                     
+                    .navigationBarHidden(true)
             }
         }
     }

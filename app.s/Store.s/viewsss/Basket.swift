@@ -116,6 +116,6 @@ struct Basket_Previews: PreviewProvider {
         Basket(
        
             
-            basketArray: [DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage())], ProductsDetails: (DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage(), plus: "", line: "")))
+            basketArray: [], ProductsDetails: (DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage(), plus: "", line: "")))
     }
 }
