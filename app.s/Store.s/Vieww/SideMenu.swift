@@ -51,7 +51,7 @@ struct SideMenu: View {
                 
                 TabButton(image: "heart", title: "Favorites", selectedTab: $selectedTab, animation: animation)
                 
-                TabButton(image: "bell.badge", title: "Notifications", selectedTab: $selectedTab, animation: animation)
+                TabButton(image: "play", title: "Reels", selectedTab: $selectedTab, animation: animation)
                 
                 TabButton(image: "message", title: "Messages", selectedTab: $selectedTab, animation: animation)
                 

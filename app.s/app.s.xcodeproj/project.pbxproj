@@ -35,6 +35,19 @@
 		F85D6E8628BD464C002F7F1C /* OtherBuy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85D6E8528BD464C002F7F1C /* OtherBuy.swift */; };
 		F85D6E8928BE3E88002F7F1C /* Buy3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85D6E8828BE3E88002F7F1C /* Buy3.swift */; };
 		F85D6E8B28BE7236002F7F1C /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85D6E8A28BE7236002F7F1C /* Basket.swift */; };
+		F88656E928C446FD00B99C10 /* academyVideos.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88656E828C446FD00B99C10 /* academyVideos.swift */; };
+		F88656EC28C5124600B99C10 /* academyArticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88656EB28C5124600B99C10 /* academyArticles.swift */; };
+		F88656EE28C5125600B99C10 /* academyGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88656ED28C5125600B99C10 /* academyGames.swift */; };
+		F88656F028C5126100B99C10 /* academyLessons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88656EF28C5126100B99C10 /* academyLessons.swift */; };
+		F88656F228C5126A00B99C10 /* academyHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88656F128C5126A00B99C10 /* academyHelp.swift */; };
+		F88656F628C532A500B99C10 /* quiezGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88656F528C532A500B99C10 /* quiezGame.swift */; };
+		F88656F928C532F700B99C10 /* HoneyCombGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88656F828C532F700B99C10 /* HoneyCombGridView.swift */; };
+		F88656FB28C5331600B99C10 /* HexagonShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88656FA28C5331600B99C10 /* HexagonShape.swift */; };
+		F88656FD28C5334D00B99C10 /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88656FC28C5334D00B99C10 /* Puzzle.swift */; };
+		F88656FF28C5361F00B99C10 /* calenHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88656FE28C5361E00B99C10 /* calenHome.swift */; };
+		F886570228C53B6300B99C10 /* CustomDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F886570128C53B6300B99C10 /* CustomDatePicker.swift */; };
+		F886570428C53B8B00B99C10 /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F886570328C53B8B00B99C10 /* DateValue.swift */; };
+		F886570628C53BEA00B99C10 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F886570528C53BEA00B99C10 /* Task.swift */; };
 		F8A6925428BABC7D00158F3B /* Buy1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A6925328BABC7D00158F3B /* Buy1.swift */; };
 		F8A6925828BAC12000158F3B /* FoodBuy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A6925728BAC12000158F3B /* FoodBuy.swift */; };
 		F8BB0C7028BBE9C900498523 /* DetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BB0C6F28BBE9C900498523 /* DetailsModel.swift */; };
@@ -73,6 +86,19 @@
 		F85D6E8528BD464C002F7F1C /* OtherBuy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherBuy.swift; sourceTree = "<group>"; };
 		F85D6E8828BE3E88002F7F1C /* Buy3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buy3.swift; sourceTree = "<group>"; };
 		F85D6E8A28BE7236002F7F1C /* Basket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
+		F88656E828C446FD00B99C10 /* academyVideos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = academyVideos.swift; sourceTree = "<group>"; };
+		F88656EB28C5124600B99C10 /* academyArticles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = academyArticles.swift; sourceTree = "<group>"; };
+		F88656ED28C5125600B99C10 /* academyGames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = academyGames.swift; sourceTree = "<group>"; };
+		F88656EF28C5126100B99C10 /* academyLessons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = academyLessons.swift; sourceTree = "<group>"; };
+		F88656F128C5126A00B99C10 /* academyHelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = academyHelp.swift; sourceTree = "<group>"; };
+		F88656F528C532A500B99C10 /* quiezGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = quiezGame.swift; sourceTree = "<group>"; };
+		F88656F828C532F700B99C10 /* HoneyCombGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoneyCombGridView.swift; sourceTree = "<group>"; };
+		F88656FA28C5331600B99C10 /* HexagonShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonShape.swift; sourceTree = "<group>"; };
+		F88656FC28C5334D00B99C10 /* Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Puzzle.swift; sourceTree = "<group>"; };
+		F88656FE28C5361E00B99C10 /* calenHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calenHome.swift; sourceTree = "<group>"; };
+		F886570128C53B6300B99C10 /* CustomDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDatePicker.swift; sourceTree = "<group>"; };
+		F886570328C53B8B00B99C10 /* DateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
+		F886570528C53BEA00B99C10 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		F8A6925328BABC7D00158F3B /* Buy1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buy1.swift; sourceTree = "<group>"; };
 		F8A6925728BAC12000158F3B /* FoodBuy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodBuy.swift; sourceTree = "<group>"; };
 		F8BB0C6F28BBE9C900498523 /* DetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsModel.swift; sourceTree = "<group>"; };
@@ -166,6 +192,43 @@
 			path = shoptypes;
 			sourceTree = "<group>";
 		};
+		F88656E528C446BE00B99C10 /* BusinessAcademy */ = {
+			isa = PBXGroup;
+			children = (
+				F82FDA4428C2E6710045B18F /* BusinessAcademy.swift */,
+				F88656ED28C5125600B99C10 /* academyGames.swift */,
+				F88656EF28C5126100B99C10 /* academyLessons.swift */,
+				F88656F128C5126A00B99C10 /* academyHelp.swift */,
+				F88656EB28C5124600B99C10 /* academyArticles.swift */,
+				F88656E828C446FD00B99C10 /* academyVideos.swift */,
+				F88656F728C532D800B99C10 /* quiez Game */,
+				F886570028C5362700B99C10 /* Calendar */,
+			);
+			path = BusinessAcademy;
+			sourceTree = "<group>";
+		};
+		F88656F728C532D800B99C10 /* quiez Game */ = {
+			isa = PBXGroup;
+			children = (
+				F88656F528C532A500B99C10 /* quiezGame.swift */,
+				F88656FC28C5334D00B99C10 /* Puzzle.swift */,
+				F88656F828C532F700B99C10 /* HoneyCombGridView.swift */,
+				F88656FA28C5331600B99C10 /* HexagonShape.swift */,
+			);
+			path = "quiez Game";
+			sourceTree = "<group>";
+		};
+		F886570028C5362700B99C10 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				F88656FE28C5361E00B99C10 /* calenHome.swift */,
+				F886570128C53B6300B99C10 /* CustomDatePicker.swift */,
+				F886570328C53B8B00B99C10 /* DateValue.swift */,
+				F886570528C53BEA00B99C10 /* Task.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
 		F88C0E3B28C3E84A00516D7C /* viewsss */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,7 +245,7 @@
 				F82FDA2228C259690045B18F /* Messeges.swift */,
 				F82FDA4228C2E5F60045B18F /* Favorites.swift */,
 				F84E577D28B6A8590077A60F /* NavigationBar.swift */,
-				F82FDA4428C2E6710045B18F /* BusinessAcademy.swift */,
+				F88656E528C446BE00B99C10 /* BusinessAcademy */,
 			);
 			path = viewsss;
 			sourceTree = "<group>";
@@ -272,6 +335,7 @@
 				F82FDA3728C26D6F0045B18F /* CustomCorners.swift in Sources */,
 				F84E577228B6A8440077A60F /* ContentView.swift in Sources */,
 				F82FDA3F28C26D7E0045B18F /* TabButton.swift in Sources */,
+				F886570628C53BEA00B99C10 /* Task.swift in Sources */,
 				F85D6E7E28BD0CC4002F7F1C /* shopModel.swift in Sources */,
 				F82FDA4128C2976F0045B18F /* BuyCustomTabBar.swift in Sources */,
 				F84E577028B6A8440077A60F /* Store_sApp.swift in Sources */,
@@ -280,18 +344,29 @@
 				F8BCFBD728B7035D000E614D /* ImagePicker.swift in Sources */,
 				F85D6E8028BD45DB002F7F1C /* GiftsBuy.swift in Sources */,
 				F8BB0C7028BBE9C900498523 /* DetailsModel.swift in Sources */,
+				F88656E928C446FD00B99C10 /* academyVideos.swift in Sources */,
+				F88656F228C5126A00B99C10 /* academyHelp.swift in Sources */,
 				F85D6E8428BD4635002F7F1C /* TechnologyBuy.swift in Sources */,
+				F88656F928C532F700B99C10 /* HoneyCombGridView.swift in Sources */,
+				F88656FF28C5361F00B99C10 /* calenHome.swift in Sources */,
+				F88656F628C532A500B99C10 /* quiezGame.swift in Sources */,
 				F82FDA3D28C26D7B0045B18F /* SideMenu.swift in Sources */,
 				F8A6925428BABC7D00158F3B /* Buy1.swift in Sources */,
+				F88656EC28C5124600B99C10 /* academyArticles.swift in Sources */,
 				F85D6E8B28BE7236002F7F1C /* Basket.swift in Sources */,
+				F88656FB28C5331600B99C10 /* HexagonShape.swift in Sources */,
+				F886570428C53B8B00B99C10 /* DateValue.swift in Sources */,
 				F82FDA4528C2E6710045B18F /* BusinessAcademy.swift in Sources */,
 				F8A6925828BAC12000158F3B /* FoodBuy.swift in Sources */,
 				F84E578028B6A85D0077A60F /* PersonalPage.swift in Sources */,
+				F886570228C53B6300B99C10 /* CustomDatePicker.swift in Sources */,
+				F88656FD28C5334D00B99C10 /* Puzzle.swift in Sources */,
 				F84E577E28B6A8590077A60F /* NavigationBar.swift in Sources */,
 				F82FDA3B28C26D780045B18F /* Homee.swift in Sources */,
 				F84E578428B6A8640077A60F /* Sell1.swift in Sources */,
 				F8BCFBD528B70302000E614D /* Product Details.swift in Sources */,
 				F84E578628B6A8670077A60F /* Home.swift in Sources */,
+				F88656EE28C5125600B99C10 /* academyGames.swift in Sources */,
 				F82FDA3928C26D740045B18F /* MainView.swift in Sources */,
 				F85D6E8228BD45F3002F7F1C /* ClothesBuy.swift in Sources */,
 				F82FDA2128C259090045B18F /* Notifications.swift in Sources */,
@@ -299,6 +374,7 @@
 				F82FDA2328C259690045B18F /* Messeges.swift in Sources */,
 				F843678028BB139700EE212B /* Buy2.swift in Sources */,
 				F8CB834328BB97CD00B1329A /* Sell2-1.swift in Sources */,
+				F88656F028C5126100B99C10 /* academyLessons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
