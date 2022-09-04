@@ -40,9 +40,11 @@ struct academyArticles: View {
                         
                         Spacer()
                     }.padding()
+                        
                         .background(Color("Color1").opacity(0.4))
                         .frame(width: 370)
                         .cornerRadius(10)
+                        .padding(.top,50)
                         .shadow(color: .gray.opacity(0.3), radius: 10)
                 }
                 .padding()

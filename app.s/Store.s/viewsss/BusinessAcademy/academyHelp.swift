@@ -48,6 +48,7 @@ struct academyHelp: View {
                     }
                     else{
                         helpalert = true
+                        errorText = ""
                     }
                     
                 } label: {
