@@ -11,13 +11,17 @@ struct ContentView: View {
     @AppStorage("currentPage") var currentPage = 1
     var body: some View {
      
-        if currentPage > totalPages{
-            startView()
+        NavigationView{
+            if currentPage > totalPages{
+                startView()
+            }
+            else{
+                WalkthroughScreen()
+            }
+           
+        }.accentColor(Color("Color4"))
+
         }
-        else{
-            WalkthroughScreen()
-        }
-    }
 }
 
 struct ContentView_Previews: PreviewProvider {

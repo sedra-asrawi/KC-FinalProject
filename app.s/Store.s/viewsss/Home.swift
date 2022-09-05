@@ -148,7 +148,8 @@ struct Home: View {
                     
                    
                     
-                    
+                    .navigationBarHidden(true)
+
                     
             }
        

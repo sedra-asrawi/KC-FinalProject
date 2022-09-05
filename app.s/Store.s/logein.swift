@@ -20,7 +20,7 @@ struct logein: View {
    
     
     var body: some View {
-        NavigationView {
+//        NavigationView {
             ZStack{
                 Color.gray.opacity(0.1)
                     .ignoresSafeArea()
@@ -100,9 +100,10 @@ struct logein: View {
                 
                 
             }
-//            .navigationBarHidden(true)
+            .navigationBarHidden(true)
             
-        }.accentColor(Color("Color4"))
+//        }
+        .accentColor(Color("Color4"))
     }
 }
 

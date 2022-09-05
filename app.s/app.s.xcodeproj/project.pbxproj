@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F81603FC28C634D8003D470C /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81603FB28C634D8003D470C /* ChatView.swift */; };
+		F81603FE28C63517003D470C /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81603FD28C63517003D470C /* MessageViewModel.swift */; };
+		F816040028C6352F003D470C /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81603FF28C6352F003D470C /* Message.swift */; };
+		F816040228C6355F003D470C /* LinkPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F816040128C6355F003D470C /* LinkPreview.swift */; };
+		F816040528C64D43003D470C /* HalfASheet in Frameworks */ = {isa = PBXBuildFile; productRef = F816040428C64D43003D470C /* HalfASheet */; };
 		F82FDA1D28C251690045B18F /* customTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82FDA1C28C251690045B18F /* customTabBar.swift */; };
 		F82FDA2128C259090045B18F /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82FDA2028C259090045B18F /* Notifications.swift */; };
 		F82FDA2328C259690045B18F /* Messeges.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82FDA2228C259690045B18F /* Messeges.swift */; };
@@ -61,6 +66,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F81603FB28C634D8003D470C /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		F81603FD28C63517003D470C /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
+		F81603FF28C6352F003D470C /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		F816040128C6355F003D470C /* LinkPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkPreview.swift; sourceTree = "<group>"; };
 		F82FDA1C28C251690045B18F /* customTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customTabBar.swift; sourceTree = "<group>"; };
 		F82FDA2028C259090045B18F /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		F82FDA2228C259690045B18F /* Messeges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messeges.swift; sourceTree = "<group>"; };
@@ -120,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F816040528C64D43003D470C /* HalfASheet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +265,7 @@
 				F82FDA2228C259690045B18F /* Messeges.swift */,
 				F82FDA4228C2E5F60045B18F /* Favorites.swift */,
 				F84E577D28B6A8590077A60F /* NavigationBar.swift */,
+				F81603FB28C634D8003D470C /* ChatView.swift */,
 				F896019E28C5692C005FAF98 /* Launch Screen.storyboard */,
 				F88656E528C446BE00B99C10 /* BusinessAcademy */,
 			);
@@ -268,6 +279,9 @@
 				F8BB0C6F28BBE9C900498523 /* DetailsModel.swift */,
 				F8BCFBD628B7035D000E614D /* ImagePicker.swift */,
 				F8400B7828C5933C008B6B05 /* Images.swift */,
+				F81603FD28C63517003D470C /* MessageViewModel.swift */,
+				F81603FF28C6352F003D470C /* Message.swift */,
+				F816040128C6355F003D470C /* LinkPreview.swift */,
 			);
 			path = importent;
 			sourceTree = "<group>";
@@ -288,6 +302,9 @@
 			dependencies = (
 			);
 			name = Store.s;
+			packageProductDependencies = (
+				F816040428C64D43003D470C /* HalfASheet */,
+			);
 			productName = Store.s;
 			productReference = F84E576C28B6A8440077A60F /* Store.s.app */;
 			productType = "com.apple.product-type.application";
@@ -316,6 +333,9 @@
 				Base,
 			);
 			mainGroup = F84E576328B6A8440077A60F;
+			packageReferences = (
+				F816040328C64D43003D470C /* XCRemoteSwiftPackageReference "HalfASheet" */,
+			);
 			productRefGroup = F84E576D28B6A8440077A60F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -348,8 +368,10 @@
 				F85D6E8928BE3E88002F7F1C /* Buy3.swift in Sources */,
 				F82FDA3728C26D6F0045B18F /* CustomCorners.swift in Sources */,
 				F84E577228B6A8440077A60F /* ContentView.swift in Sources */,
+				F81603FC28C634D8003D470C /* ChatView.swift in Sources */,
 				F82FDA3F28C26D7E0045B18F /* TabButton.swift in Sources */,
 				F886570628C53BEA00B99C10 /* Task.swift in Sources */,
+				F816040028C6352F003D470C /* Message.swift in Sources */,
 				F85D6E7E28BD0CC4002F7F1C /* shopModel.swift in Sources */,
 				F82FDA4128C2976F0045B18F /* BuyCustomTabBar.swift in Sources */,
 				F8400B7728C591E5008B6B05 /* startView.swift in Sources */,
@@ -382,9 +404,11 @@
 				F8BCFBD528B70302000E614D /* Product Details.swift in Sources */,
 				F84E578628B6A8670077A60F /* Home.swift in Sources */,
 				F88656EE28C5125600B99C10 /* academyGames.swift in Sources */,
+				F81603FE28C63517003D470C /* MessageViewModel.swift in Sources */,
 				F82FDA3928C26D740045B18F /* MainView.swift in Sources */,
 				F85D6E8228BD45F3002F7F1C /* ClothesBuy.swift in Sources */,
 				F82FDA2128C259090045B18F /* Notifications.swift in Sources */,
+				F816040228C6355F003D470C /* LinkPreview.swift in Sources */,
 				F85D6E8628BD464C002F7F1C /* OtherBuy.swift in Sources */,
 				F82FDA2328C259690045B18F /* Messeges.swift in Sources */,
 				F843678028BB139700EE212B /* Buy2.swift in Sources */,
@@ -591,6 +615,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F816040328C64D43003D470C /* XCRemoteSwiftPackageReference "HalfASheet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/franklynw/HalfASheet";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F816040428C64D43003D470C /* HalfASheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F816040328C64D43003D470C /* XCRemoteSwiftPackageReference "HalfASheet" */;
+			productName = HalfASheet;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F84E576428B6A8440077A60F /* Project object */;
 }

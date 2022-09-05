@@ -54,7 +54,7 @@ struct Homee: View {
                     Notifications()
                         .tag("Notifications")
                     
-                    Messeges()
+                    Messeges(ToName: "")
                         .tag("Messages")
                     
                     BusinessAcademy()
