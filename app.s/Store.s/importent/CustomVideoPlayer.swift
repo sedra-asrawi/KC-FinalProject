@@ -8,7 +8,7 @@
 import SwiftUI
 import AVKit
 
-// Custom Video Player from UIKit
+
 struct CustomVideoPlayer: UIViewControllerRepresentable {
     
     var player: AVPlayer
@@ -26,7 +26,7 @@ struct CustomVideoPlayer: UIViewControllerRepresentable {
         
         controller.videoGravity = .resizeAspectFill
         
-        // repeating playback.....
+
         player.actionAtItemEnd = .none
         
         NotificationCenter.default.addObserver(context.coordinator, selector: #selector(context.coordinator.restartPlayback), name: .AVPlayerItemDidPlayToEndTime, object: player.currentItem)

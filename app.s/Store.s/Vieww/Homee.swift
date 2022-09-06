@@ -11,8 +11,8 @@ struct Homee: View {
     @Binding var selectedTab: String
 //    @Binding var username : String
     
-    // Hiding Tab Bar...
-//    init(selectedTab: Binding<String>) {
+
+    //    init(selectedTab: Binding<String>) {
 //        self._selectedTab = selectedTab
 //        UITabBar.appearance().isHidden = true
 //    }
@@ -38,10 +38,10 @@ struct Homee: View {
 //        NavigationView {
             
             ZStack{
-                // Tab View With Tabs...
+
                 TabView(selection: $selectedTab){
                     
-                    // Views...
+
                     
 //                    Homey(username2: "", shopDet: .constant(shopModel(shopName: "", shopLogo: UIImage(), shoptype: "")), productsArray: .constant([]), basketArray: [DetailsModel(prodName: "", prodDet: "", prodPrice: "", prodImage: UIImage())])
                     
@@ -84,7 +84,7 @@ struct Homee_Previews: PreviewProvider {
     }
 }
 
-// All Sub Views....
+
 
 struct HomeePage: View {
     

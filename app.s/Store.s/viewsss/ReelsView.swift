@@ -12,7 +12,7 @@ struct ReelsView: View {
     
     @State var currentReel = ""
     
-    // Extracting Avplayer from media File...
+
     @State var reels = MediaFileJSON.map { item -> Reel in
         
         let url = Bundle.main.path(forResource: item.url, ofType: "mp4") ?? ""
@@ -24,36 +24,36 @@ struct ReelsView: View {
     
     var body: some View {
         
-        // Setting Width and height for rotated view....
+
         GeometryReader{proxy in
             
             let size = proxy.size
             
-            // Vertical Page Tab VIew....
+
             TabView(selection: $currentReel){
                 
                 ForEach($reels){$reel in
                     
                     ReelsPlayer(reel: $reel, currentReel: $currentReel)
-                    // setting width...
+
                     .frame(width: size.width)
-                    // Rotating Content...
+
                     .rotationEffect(.init(degrees: -90))
                     .ignoresSafeArea(.all, edges: .top)
                     .tag(reel.id)
                 }
             }
-            // Rotating View....
+
             .rotationEffect(.init(degrees: 90))
-            // Since view is rotated setting height as width...
+
             .frame(width: size.height)
             .tabViewStyle(.page(indexDisplayMode: .never))
-            // setting max width...
+
             .frame(width: size.width)
         }
         .ignoresSafeArea(.all, edges: .top)
         .background(Color.black.ignoresSafeArea())
-        // setting intial reel...
+
         .onAppear {
             currentReel = reels.first?.id ?? ""
         }
@@ -72,7 +72,7 @@ struct ReelsPlayer: View{
     
     @Binding var currentReel: String
     
-    // Expading title if its clicked...
+
     @State var showMore = false
     
     @State var isMuted = false
@@ -82,12 +82,12 @@ struct ReelsPlayer: View{
         
         ZStack{
             
-            // safe Check...
+
             if let player = reel.player{
                 
                 CustomVideoPlayer(player: player)
                 
-                // Playing Video Based on Offset...
+
                 
                 GeometryReader{proxy -> Color in
                     
@@ -97,9 +97,9 @@ struct ReelsPlayer: View{
                     
                     DispatchQueue.main.async {
                         
-                        // since we have many cards and offset goes beyond
-                        // so it starts playing the below videos...
-                        // to avoid this checking the current one with current reel id.....
+
+
+                        
                         if -minY < (size.height / 2) && minY < (size.height / 2) && currentReel == reel.id{
                             
                             player.play()
@@ -113,9 +113,9 @@ struct ReelsPlayer: View{
                 }
                 
                 
-                // Volume COntrol....
-                // allowing control for set of area...
-                // its your wish...
+
+                
+                
                 Color.black
                     .opacity(0.01)
                     .frame(width: 150, height: 150)
@@ -125,21 +125,21 @@ struct ReelsPlayer: View{
                         }
                         
                         isMuted.toggle()
-                        // Muting player...
+
                         player.isMuted = isMuted
                         withAnimation{volumeAnimation.toggle()}
                         
-                        // Closing animation after 0.8 sec...
+
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
                             
                             withAnimation{volumeAnimation.toggle()}
                         }
                     }
                 
-                // Dimming background when showing more content...
+
                 Color.black.opacity(showMore ? 0.35 : 0)
                     .onTapGesture {
-                        // closing it...
+
                         withAnimation{showMore.toggle()}
                     }
                 
@@ -169,7 +169,7 @@ struct ReelsPlayer: View{
 
                             }
                             
-                            // Title Custom View...
+
                             
                             ZStack{
                                 
@@ -177,7 +177,7 @@ struct ReelsPlayer: View{
                                     
                                     ScrollView(.vertical, showsIndicators: false) {
                                         
-                                        // your extra text...
+
                                         Text(reel.mediaFile.title + sampleText)
                                             .font(.callout)
                                             .fontWeight(.semibold)
@@ -216,12 +216,12 @@ struct ReelsPlayer: View{
                         
                         Spacer(minLength: 20)
                         
-                        // List of Buttons....
+
                         
                         ActionButtons(reel: reel)
                     }
                     
-                    // Music View...
+
                     HStack{
                         
                         Text("A Sky full of Stars")
@@ -313,7 +313,6 @@ struct ActionButtons: View{
                     .renderingMode(.template)
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 20, height: 20)
-                // rotating...
                     .rotationEffect(.init(degrees: 90))
             }
 

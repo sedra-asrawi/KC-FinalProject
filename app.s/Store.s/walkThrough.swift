@@ -11,15 +11,14 @@ import SwiftUI
 // This project will work for iOS 14 also.....
 struct walkThrough: View {
     
-    // CurrentState...
     @State var dotState: DotState = .normal
-    // Scale Value...
+
     @State var dotScale: CGFloat = 1
     
-    // Rotation..
+
     @State var dotRotation: Double = 0
     
-    // To avoid multiple taps...
+
     @State var isAnimating = false
     
     var body: some View {
@@ -29,7 +28,7 @@ struct walkThrough: View {
             
             ZStack{
                 
-                // Changing color based on state...
+
                 (dotState == .normal ? Color("Color2") : Color("Color4"))
                 
                 if dotState == .normal{
@@ -47,9 +46,9 @@ struct walkThrough: View {
                 
                     ZStack{
                         
-                        // Put View in reverse...
-                        // so that it will look like masking effect...
-                        // changing view based on state...
+
+                        
+                        
                         if dotState != .normal{
                             MinimisedView()
                         }
@@ -59,13 +58,13 @@ struct walkThrough: View {
                     }
                 )
                 .animation(.none, value: dotState)
-            // Masking The view with cirlce to create dot inversion animation...
+
                 .mask(
                 
                     GeometryReader{proxy in
                         
                         Circle()
-                        // While increasing the scale the content will be visible...
+
                             .frame(width: 100, height: 100)
                             .scaleEffect(dotScale)
                             .rotation3DEffect(.init(degrees: dotRotation), axis: (x: 0, y: 1, z: 0), anchorZ: dotState == .flipped ? -10 : 10, perspective: 1)
@@ -74,17 +73,17 @@ struct walkThrough: View {
                     }
                 )
             
-            // For Tap Gesture....
+
             Circle()
                 .foregroundColor(Color.black.opacity(0.01))
                 .frame(width: 100, height: 100)
-            // Arrow...
+
                 .overlay(
                 
                     Image(systemName: "chevron.right")
                         .font(.title)
                         .foregroundColor(.white)
-                    //opactiy animation...
+
                         .opacity(isAnimating ? 0 : 1)
                         .animation(.easeInOut(duration: 0.4), value: isAnimating)
                 )
@@ -95,14 +94,14 @@ struct walkThrough: View {
                     
                     isAnimating = true
                     
-                    // checking if dot is flipped...
+
                     if dotState == .flipped{
                         
                         
-                        // Reversing the effect....
+
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.725) {
                             
-                            // 1.5/2 = 0.7
+
                             withAnimation(.linear(duration: 0.7)){
                                 dotScale = 1
                                 dotState = .normal
@@ -116,14 +115,13 @@ struct walkThrough: View {
                     }
                     else{
                         
-                        // At mid of 1.5 just resetting the scale to again 1...
-                        // so that it will be look like dot inversion...
+
                         
-                        // To get correct timing ...
-                        // just trail and error the delay value....
+
+                        
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.725) {
                             
-                            // 1.5/2 = 0.7
+
                             withAnimation(.linear(duration: 0.7)){
                                 dotScale = 1
                                 dotState = .flipped
@@ -136,7 +134,7 @@ struct walkThrough: View {
                         }
                     }
                     
-                    // After 1.4s resetting isAnimating State...
+
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.4) {
                         isAnimating = false
                     }
@@ -147,7 +145,7 @@ struct walkThrough: View {
         .ignoresSafeArea()
     }
     
-    // Expanded and Minimised Views....
+
     
     @ViewBuilder
     func MinimisedView()->some View{

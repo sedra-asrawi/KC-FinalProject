@@ -38,7 +38,7 @@ struct Homey: View {
     
     @State var selction : String = "playtv"
     
-    // Location For each Curve...
+
     @State var xAxis: CGFloat = 0
     
     @Namespace var animation
@@ -83,7 +83,7 @@ struct Homey: View {
                     .tag("questionmark.circle.fill")
             }
             
-            // Custom tab Bar...
+
             
             HStack(spacing: 0){
                 
@@ -126,14 +126,14 @@ struct Homey: View {
             .padding(.vertical)
             .background(Color("Color3").clipShape(CustomShape(xAxis: xAxis)).cornerRadius(12))
             .padding(.horizontal)
-            // Bottom Edge...
+
             .padding(.bottom,UIApplication.shared.windows.first?.safeAreaInsets.bottom)
-//            .padding()
+
         }
         .ignoresSafeArea(.all, edges: .bottom)
     }
     
-    // getting Image Color....
+
     
     func getColor(image: String)->Color{
         
@@ -156,13 +156,13 @@ var tabs = [
     
     "playtv","chart.bar.doc.horizontal","gamecontroller.fill","video.bubble.left","questionmark.circle.fill"]
 
-// Curve...
+
 
 struct CustomShape: Shape {
     
     var xAxis: CGFloat
     
-    // Animating Path...
+
     
     var animatableData: CGFloat{
         get{return xAxis}

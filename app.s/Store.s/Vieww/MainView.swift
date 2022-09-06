@@ -35,20 +35,20 @@ struct MainView: View {
                     Color("Color3")
                         .ignoresSafeArea()
                     
-                    // Side Menu...
-                    ScrollView(getRect().height < 750 ? .vertical : .init(), showsIndicators: false, content: {
+
+                ScrollView(getRect().height < 750 ? .vertical : .init(), showsIndicators: false, content: {
                         
                         SideMenu(selectedTab: $selectedTab, username: $username)
                     })
 
                     ZStack{
                         
-                        // two background Cards...
+
                         
                         Color.white
                             .opacity(0.5)
                             .cornerRadius(showMenu ? 15 : 0)
-                            // Shadow...
+
                             .shadow(color: Color.black.opacity(0.07), radius: 5, x: -5, y: 0)
                             .offset(x: showMenu ? -25 : 0)
                             .padding(.vertical,30)
@@ -56,7 +56,7 @@ struct MainView: View {
                         Color.white
                             .opacity(0.4)
                             .cornerRadius(showMenu ? 15 : 0)
-                            // Shadow...
+
                             .shadow(color: Color.black.opacity(0.07), radius: 5, x: -5, y: 0)
                             .offset(x: showMenu ? -50 : 0)
                             .padding(.vertical,60)
@@ -67,13 +67,13 @@ struct MainView: View {
                             .disabled(showMenu ? true : false)
                     }
                     
-                    // Scaling And Moving The View...
+
                     .scaleEffect(showMenu ? 0.84 : 1)
                     .offset(x: showMenu ? getRect().width - 120 : 0)
                     .ignoresSafeArea()
                     .overlay(
                     
-                        // Menu Button...
+
                         VStack{
                             
                             Button(action: {
@@ -82,13 +82,13 @@ struct MainView: View {
                                 }
                             }, label: {
                                 
-                                // Animted Drawer Button..
+
                                 VStack(spacing: 5){
                                     
                                     Capsule()
                                         .fill(showMenu ? Color.white : Color.primary)
                                         .frame(width: 30, height: 3)
-                                    // Rotating...
+
                                         .rotationEffect(.init(degrees: showMenu ? -50 : 0))
                                         .offset(x: showMenu ? 2 : 0, y: showMenu ? 9 : 0)
 
@@ -97,7 +97,7 @@ struct MainView: View {
                                         Capsule()
                                             .fill(showMenu ? Color.white : Color.primary)
                                             .frame(width: 30, height: 3)
-                                        // Moving Up when clicked...
+
                                         Capsule()
                                             .fill(showMenu ? Color.white : Color.primary)
                                             .frame(width: 30, height: 3)
@@ -110,8 +110,8 @@ struct MainView: View {
                             .padding()
                             
                         }
-//                            .offset(y: -15)
-                            
+
+                        
                         
                         ,alignment: .topTrailing
                         
@@ -137,7 +137,7 @@ struct MainView_Previews: PreviewProvider {
     }
 }
 
-// Extending View To get Screen Size...
+
 extension View{
     
     func getRect()->CGRect{
