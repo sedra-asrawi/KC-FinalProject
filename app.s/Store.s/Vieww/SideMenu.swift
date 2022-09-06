@@ -20,7 +20,6 @@ struct SideMenu: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 15, content: {
             
-            // Profile Pic...
             Button {
                 showSheet = true
             } label: {
@@ -29,7 +28,7 @@ struct SideMenu: View {
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 70, height: 70)
                     .cornerRadius(10)
-                // Padding top for Top Close Button...
+
                     .padding(.top,50)
             }
 
@@ -44,7 +43,7 @@ struct SideMenu: View {
                
             })
             
-            // tab Buttons...
+
             VStack(alignment: .leading,spacing: 10){
                 
                 TabButton(image: "house", title: "Home", selectedTab: $selectedTab, animation: animation)
@@ -55,7 +54,7 @@ struct SideMenu: View {
                 
                 TabButton(image: "message", title: "Messages", selectedTab: $selectedTab, animation: animation)
                 
-//                TabButton(image: "gearshape.fill", title: "Settings", selectedTab: $selectedTab, animation: animation)
+                
                 
                 TabButton(image: "book", title: "Business Academy", selectedTab: $selectedTab, animation: animation)
                 
@@ -67,8 +66,10 @@ struct SideMenu: View {
             
             Spacer()
             
-            // Sign Out Button...
+
             VStack(alignment: .leading, spacing: 6, content: {
+                
+                
                 
                 TabButton(image: "rectangle.righthalf.inset.fill.arrow.right", title: "Log out", selectedTab: .constant(""), animation: animation)
                     .padding(.leading,-15)

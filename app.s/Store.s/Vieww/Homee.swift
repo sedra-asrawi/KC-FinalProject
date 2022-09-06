@@ -51,8 +51,8 @@ struct Homee: View {
                     Favorites()
                         .tag("Favorites")
                     
-                    Notifications()
-                        .tag("Notifications")
+                    ReelsHome()
+                        .tag("Reels")
                     
                     Messeges(ToName: "")
                         .tag("Messages")

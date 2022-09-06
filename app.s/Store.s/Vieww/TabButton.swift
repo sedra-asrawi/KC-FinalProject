@@ -11,9 +11,9 @@ struct TabButton: View {
     var image: String
     var title: String
     
-    // Selected Tab...
+
     @Binding var selectedTab: String
-    // For Hero Animation Slide...
+
     var animation: Namespace.ID
     
     var body: some View {
@@ -38,7 +38,7 @@ struct TabButton: View {
             .frame(maxWidth: getRect().width - 170, alignment: .leading)
             .background(
             
-                // hero Animation...
+
                 ZStack{
                     
                     if selectedTab == title{

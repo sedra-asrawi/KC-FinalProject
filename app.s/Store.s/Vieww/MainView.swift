@@ -117,7 +117,9 @@ struct MainView: View {
                         
                     )
                     
+                    .navigationBarTitleDisplayMode(.inline)
                     .navigationBarHidden(true)
+
 
                 }
 //        }

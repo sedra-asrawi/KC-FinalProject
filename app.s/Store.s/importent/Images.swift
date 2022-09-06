@@ -1,5 +1,4 @@
-// swiftlint:disable all
-// Generated using SwiftGen — https://github.com/SwiftGen/SwiftGen
+
 
 #if os(macOS)
   import AppKit
@@ -9,11 +8,9 @@
   import UIKit
 #endif
 
-// swiftlint:disable superfluous_disable_command file_length implicit_return
 
-// MARK: - Asset Catalogs
 
-// swiftlint:disable identifier_name line_length nesting type_body_length type_name
+
 public enum Asset {
   public static let accentColor = ColorAsset(name: "AccentColor")
   public static let clock = ImageAsset(name: "clock")
@@ -26,16 +23,7 @@ public enum Asset {
     public static let app6 = ImageAsset(name: "app6")
     public static let app7 = ImageAsset(name: "app7")
   }
-  public static let map = ImageAsset(name: "map")
-  public static let money = ImageAsset(name: "money")
-  public static let phone = ImageAsset(name: "phone")
-  public static let star = ImageAsset(name: "star")
-  public static let walk = ImageAsset(name: "walk")
-
-  // swiftlint:disable trailing_comma
-  public static let allColors: [ColorAsset] = [
-    accentColor,
-  ]
+  
   public static let allImages: [ImageAsset] = [
     clock,
     Food.app1,
@@ -45,17 +33,13 @@ public enum Asset {
     Food.app5,
     Food.app6,
     Food.app7,
-    map,
-    money,
-    phone,
-    star,
-    walk,
-  ]
-  // swiftlint:enable trailing_comma
-}
-// swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
-// MARK: - Implementation Details
+  ]
+
+}
+
+
+
 
 public final class ColorAsset {
   public fileprivate(set) var name: String

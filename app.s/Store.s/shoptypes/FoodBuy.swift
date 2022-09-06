@@ -14,7 +14,7 @@ struct FoodBuy: View {
     @State var foodshopsArray : [shopModel] = []
     
     @Binding var shopsName : String
-    @State var flashSale = ["red","white"]
+    @State var flashSale = ["Donuts Home","Food in a BOX"]
     let popular = ["rositowarag3enab","TheBakery","Velvet.kwt","Cloudyy.Cakes"]
     @Binding var shopDet : shopModel
 
@@ -24,7 +24,7 @@ struct FoodBuy: View {
 
     
     var body: some View {
-                NavigationView{
+//                NavigationView{
         ZStack {
             VStack {
                 
@@ -244,7 +244,7 @@ struct FoodBuy: View {
                 
 
 
-                }
+//                }
     }
 }
 

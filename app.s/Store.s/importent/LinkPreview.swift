@@ -1,9 +1,3 @@
-//
-//  LinkPreview.swift
-//  Store.s
-//
-//  Created by Sedra Asrawi on 05/09/2022.
-//
 
 import SwiftUI
 import LinkPresentation

@@ -24,7 +24,7 @@ struct Buy3: View {
     @State var addtobasketColor = Color("Color3")
 
     var body: some View {
-        NavigationView {
+//        NavigationView {
             ZStack{
                 
                 Color("graycolor")
@@ -205,7 +205,7 @@ struct Buy3: View {
                 
               
             }
-        }
+//        }
     }
 }
 
