@@ -36,9 +36,15 @@ struct ReelsView: View {
                     
                     ReelsPlayer(reel: $reel, currentReel: $currentReel)
 
+<<<<<<< Updated upstream
                     .frame(width: size.width)
 
                     .rotationEffect(.init(degrees: -90))
+=======
+                        .frame(width: size.width)
+
+                        .rotationEffect(.init(degrees: -90))
+>>>>>>> Stashed changes
                     .ignoresSafeArea(.all, edges: .top)
                     .tag(reel.id)
                 }
@@ -99,7 +105,11 @@ struct ReelsPlayer: View{
                         
 
 
+<<<<<<< Updated upstream
                         
+=======
+
+>>>>>>> Stashed changes
                         if -minY < (size.height / 2) && minY < (size.height / 2) && currentReel == reel.id{
                             
                             player.play()
@@ -114,8 +124,13 @@ struct ReelsPlayer: View{
                 
                 
 
+<<<<<<< Updated upstream
                 
                 
+=======
+
+
+>>>>>>> Stashed changes
                 Color.black
                     .opacity(0.01)
                     .frame(width: 150, height: 150)
@@ -322,4 +337,7 @@ struct ActionButtons: View{
 }
 
 
+<<<<<<< Updated upstream
 let sampleText = "................."
+=======
+>>>>>>> Stashed changes

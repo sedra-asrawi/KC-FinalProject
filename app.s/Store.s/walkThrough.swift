@@ -8,11 +8,15 @@
 
 import SwiftUI
 
-// This project will work for iOS 14 also.....
+
 struct walkThrough: View {
     
     @State var dotState: DotState = .normal
+<<<<<<< Updated upstream
 
+=======
+    
+>>>>>>> Stashed changes
     @State var dotScale: CGFloat = 1
     
 
@@ -48,7 +52,10 @@ struct walkThrough: View {
                         
 
                         
+<<<<<<< Updated upstream
                         
+=======
+>>>>>>> Stashed changes
                         if dotState != .normal{
                             MinimisedView()
                         }
@@ -115,10 +122,13 @@ struct walkThrough: View {
                     }
                     else{
                         
+<<<<<<< Updated upstream
 
                         
 
                         
+=======
+>>>>>>> Stashed changes
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.725) {
                             
 
@@ -146,7 +156,10 @@ struct walkThrough: View {
     }
     
 
+<<<<<<< Updated upstream
     
+=======
+>>>>>>> Stashed changes
     @ViewBuilder
     func MinimisedView()->some View{
         
@@ -253,7 +266,7 @@ struct walkThrough_Previews: PreviewProvider {
     }
 }
 
-// Enum for current Dot State...
+
 enum DotState{
     case normal
     case flipped

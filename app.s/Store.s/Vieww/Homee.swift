@@ -16,6 +16,7 @@ struct Homee: View {
 //        self._selectedTab = selectedTab
 //        UITabBar.appearance().isHidden = true
 //    }
+    
     @State var username2 : String
     @State var foodstoreArray : [shopModel] = []
     @Binding var shopDet : shopModel
