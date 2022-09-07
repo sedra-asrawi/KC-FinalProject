@@ -27,6 +27,9 @@
 		F8400B7728C591E5008B6B05 /* startView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8400B7628C591E5008B6B05 /* startView.swift */; };
 		F8400B7928C5933C008B6B05 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8400B7828C5933C008B6B05 /* Images.swift */; };
 		F843678028BB139700EE212B /* Buy2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F843677F28BB139700EE212B /* Buy2.swift */; };
+		F8445FF928C7E3D7002C509E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F8445FF828C7E3D7002C509E /* FirebaseAuth */; };
+		F8445FFB28C7E3D7002C509E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F8445FFA28C7E3D7002C509E /* FirebaseFirestore */; };
+		F8445FFF28C7EDD3002C509E /* Login2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8445FFE28C7EDD3002C509E /* Login2.swift */; };
 		F84E577028B6A8440077A60F /* Store_sApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E576F28B6A8440077A60F /* Store_sApp.swift */; };
 		F84E577228B6A8440077A60F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E577128B6A8440077A60F /* ContentView.swift */; };
 		F84E577728B6A8450077A60F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F84E577628B6A8450077A60F /* Preview Assets.xcassets */; };
@@ -70,6 +73,9 @@
 		F8BCFBD528B70302000E614D /* Product Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BCFBD428B70302000E614D /* Product Details.swift */; };
 		F8BCFBD728B7035D000E614D /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BCFBD628B7035D000E614D /* ImagePicker.swift */; };
 		F8CB834328BB97CD00B1329A /* Sell2-1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CB834228BB97CD00B1329A /* Sell2-1.swift */; };
+		F8D0951B28C832CF007F7427 /* signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D0951A28C832CF007F7427 /* signup.swift */; };
+		F8D0951D28C83309007F7427 /* signIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D0951C28C83309007F7427 /* signIn.swift */; };
+		F8D0951F28C834F6007F7427 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8D0951E28C834F6007F7427 /* GoogleService-Info.plist */; };
 		F8FF580928C76337000D62E0 /* ReelHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FF580828C76337000D62E0 /* ReelHome.swift */; };
 		F8FF580B28C76357000D62E0 /* ReelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FF580A28C76357000D62E0 /* ReelsView.swift */; };
 		F8FF580D28C76367000D62E0 /* CustomVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FF580C28C76367000D62E0 /* CustomVideoPlayer.swift */; };
@@ -97,6 +103,7 @@
 		F8400B7628C591E5008B6B05 /* startView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startView.swift; sourceTree = "<group>"; };
 		F8400B7828C5933C008B6B05 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		F843677F28BB139700EE212B /* Buy2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buy2.swift; sourceTree = "<group>"; };
+		F8445FFE28C7EDD3002C509E /* Login2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login2.swift; sourceTree = "<group>"; };
 		F84E576C28B6A8440077A60F /* Store.s.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Store.s.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F84E576F28B6A8440077A60F /* Store_sApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store_sApp.swift; sourceTree = "<group>"; };
 		F84E577128B6A8440077A60F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -141,6 +148,9 @@
 		F8BCFBD428B70302000E614D /* Product Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product Details.swift"; sourceTree = "<group>"; };
 		F8BCFBD628B7035D000E614D /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		F8CB834228BB97CD00B1329A /* Sell2-1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sell2-1.swift"; sourceTree = "<group>"; };
+		F8D0951A28C832CF007F7427 /* signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signup.swift; sourceTree = "<group>"; };
+		F8D0951C28C83309007F7427 /* signIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signIn.swift; sourceTree = "<group>"; };
+		F8D0951E28C834F6007F7427 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F8FF580828C76337000D62E0 /* ReelHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelHome.swift; sourceTree = "<group>"; };
 		F8FF580A28C76357000D62E0 /* ReelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelsView.swift; sourceTree = "<group>"; };
 		F8FF580C28C76367000D62E0 /* CustomVideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVideoPlayer.swift; sourceTree = "<group>"; };
@@ -154,6 +164,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F816040528C64D43003D470C /* HalfASheet in Frameworks */,
+				F8445FF928C7E3D7002C509E /* FirebaseAuth in Frameworks */,
+				F8445FFB28C7E3D7002C509E /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +202,7 @@
 				F86F8FC928C7739800872577 /* Reel4.mp4 */,
 				F86F8FCA28C7739800872577 /* Reel5.mp4 */,
 				F86F8FCB28C7739800872577 /* Reel6.mp4 */,
+				F8D0951E28C834F6007F7427 /* GoogleService-Info.plist */,
 				F84E576E28B6A8440077A60F /* Store.s */,
 				F84E576D28B6A8440077A60F /* Products */,
 			);
@@ -211,6 +224,9 @@
 				F83F204428C6AC6D0018B58B /* walkThrough.swift */,
 				F8400B7628C591E5008B6B05 /* startView.swift */,
 				F8400B7428C58542008B6B05 /* logein.swift */,
+				F8D0951A28C832CF007F7427 /* signup.swift */,
+				F8D0951C28C83309007F7427 /* signIn.swift */,
+				F8445FFE28C7EDD3002C509E /* Login2.swift */,
 				F88C0E3B28C3E84A00516D7C /* viewsss */,
 				F88C0E3C28C3E88100516D7C /* importent */,
 				F85D6E8728BD47E0002F7F1C /* shoptypes */,
@@ -340,6 +356,8 @@
 			name = Store.s;
 			packageProductDependencies = (
 				F816040428C64D43003D470C /* HalfASheet */,
+				F8445FF828C7E3D7002C509E /* FirebaseAuth */,
+				F8445FFA28C7E3D7002C509E /* FirebaseFirestore */,
 			);
 			productName = Store.s;
 			productReference = F84E576C28B6A8440077A60F /* Store.s.app */;
@@ -371,6 +389,7 @@
 			mainGroup = F84E576328B6A8440077A60F;
 			packageReferences = (
 				F816040328C64D43003D470C /* XCRemoteSwiftPackageReference "HalfASheet" */,
+				F8445FF728C7E3D7002C509E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = F84E576D28B6A8440077A60F /* Products */;
 			projectDirPath = "";
@@ -395,6 +414,7 @@
 				F84E577728B6A8450077A60F /* Preview Assets.xcassets in Resources */,
 				F84E578828B6A9430077A60F /* junk in Resources */,
 				F8A24EF728C69F2400F725F8 /* Assets.xcassets in Resources */,
+				F8D0951F28C834F6007F7427 /* GoogleService-Info.plist in Resources */,
 				F896019F28C5692C005FAF98 /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -410,6 +430,7 @@
 				F85D6E8928BE3E88002F7F1C /* Buy3.swift in Sources */,
 				F82FDA3728C26D6F0045B18F /* CustomCorners.swift in Sources */,
 				F84E577228B6A8440077A60F /* ContentView.swift in Sources */,
+				F8445FFF28C7EDD3002C509E /* Login2.swift in Sources */,
 				F8FF580D28C76367000D62E0 /* CustomVideoPlayer.swift in Sources */,
 				F81603FC28C634D8003D470C /* ChatView.swift in Sources */,
 				F82FDA3F28C26D7E0045B18F /* TabButton.swift in Sources */,
@@ -428,6 +449,7 @@
 				F88656E928C446FD00B99C10 /* academyVideos.swift in Sources */,
 				F88656F228C5126A00B99C10 /* academyHelp.swift in Sources */,
 				F85D6E8428BD4635002F7F1C /* TechnologyBuy.swift in Sources */,
+				F8D0951D28C83309007F7427 /* signIn.swift in Sources */,
 				F88656F928C532F700B99C10 /* HoneyCombGridView.swift in Sources */,
 				F88656FF28C5361F00B99C10 /* calenHome.swift in Sources */,
 				F88656F628C532A500B99C10 /* quiezGame.swift in Sources */,
@@ -450,6 +472,7 @@
 				F8BCFBD528B70302000E614D /* Product Details.swift in Sources */,
 				F84E578628B6A8670077A60F /* Home.swift in Sources */,
 				F88656EE28C5125600B99C10 /* academyGames.swift in Sources */,
+				F8D0951B28C832CF007F7427 /* signup.swift in Sources */,
 				F81603FE28C63517003D470C /* MessageViewModel.swift in Sources */,
 				F82FDA3928C26D740045B18F /* MainView.swift in Sources */,
 				F85D6E8228BD45F3002F7F1C /* ClothesBuy.swift in Sources */,
@@ -675,6 +698,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		F8445FF728C7E3D7002C509E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -682,6 +713,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F816040328C64D43003D470C /* XCRemoteSwiftPackageReference "HalfASheet" */;
 			productName = HalfASheet;
+		};
+		F8445FF828C7E3D7002C509E /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F8445FF728C7E3D7002C509E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		F8445FFA28C7E3D7002C509E /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F8445FF728C7E3D7002C509E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

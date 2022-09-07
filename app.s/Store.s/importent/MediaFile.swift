@@ -17,11 +17,11 @@ struct MediaFile: Identifiable{
 
 var MediaFileJSON = [
     
-   MediaFile(url: "Reel1", title: "Apple AirTag....."),
-   MediaFile(url: "Reel2", title: "omg..... Animal crossing"),
-   MediaFile(url: "Reel3", title: "So hyped for Halo...."),
-   MediaFile(url: "Reel4", title: "SponsorShip....."),
-   MediaFile(url: "Reel5", title: "I've been creating more vertical 30 second content"),
+   MediaFile(url: "Reel1", title: "Packaging ✨"),
+   MediaFile(url: "Reel2", title: "Orders through instagram "),
+   MediaFile(url: "Reel3", title: "let me know what you like the best!"),
+   MediaFile(url: "Reel4", title: "How many cups of coffee have you had today ?"),
+   MediaFile(url: "Reel5", title: "How cute 🥹"),
    MediaFile(url: "Reel6", title: "The brand new Apple Tower Theater opens"),
    
 ]
